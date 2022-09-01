@@ -1,1 +1,1 @@
-# Max-Power-React template
+# super-awesome-project
