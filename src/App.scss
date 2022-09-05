@@ -1,5 +1,20 @@
 .wrapper {
   text-align: center;
+  height: 100vh;
+  position: relative;
+}
+.gridContainer__template {
+  min-height: 70vh;
+  width: 80vw;
+  max-width: 100rem;
+  margin: 2rem auto;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.501);
+  box-shadow: 0 5px 10px #111;
+=======
 }
 
 .content-container {
