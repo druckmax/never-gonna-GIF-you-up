@@ -6,9 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-top: 10rem;
+
 }
 
 .grid-container {
@@ -19,6 +17,12 @@
   -moz-column-gap: 10px;
   column-count: 4;
   column-gap: 10px;
+
+  margin-left: 30%;
+  padding-left: 15px;
+  margin-right: 30%;
+  padding-right: 15px;
+  margin-top: 10rem;
 }
 
 .grid-item{
@@ -35,4 +39,52 @@
       width: 100%;
       height: 100%;
   }
+}
+
+// Responsive Design PHONES
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    -webkit-column-count: 1;
+    -webkit-column-gap: 5px;
+    -moz-column-count: 1;
+    -moz-column-gap: 5px;
+    column-count: 1;
+    column-gap: 5px;
+  }  
+}
+
+// Responsive Design BIG PHONES and SMALL TABLETS
+@media only screen and (min-width: 600px) {
+  .grid-container {
+    -webkit-column-count: 2;
+    -webkit-column-gap: 7px;
+    -moz-column-count: 2;
+    -moz-column-gap: 7px;
+    column-count: 2;
+    column-gap: 7px;
+  }  
+}
+
+// Responsive Design AVERAGE TABLETS
+@media only screen and (min-width: 768px) {
+  .grid-container {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 9px;
+    -moz-column-count: 3;
+    -moz-column-gap: 9px;
+    column-count: 3;
+    column-gap: 9px;
+  }  
+}
+
+// Responsive Design DESKTOP
+@media only screen and (min-width: 1200px) {
+  .grid-container {
+    -webkit-column-count: 4;
+    -webkit-column-gap: 10px;
+    -moz-column-count: 4;
+    -moz-column-gap: 10px;
+    column-count: 4;
+    column-gap: 10px;
+  }  
 }
