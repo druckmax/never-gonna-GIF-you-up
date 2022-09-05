@@ -1,5 +1,7 @@
 import React from 'react'
 import './searchResults.scss'
+import {BsFillSuitHeartFill} from 'react-icons/bs'
+
 
 export default function SearchResults() {
 
@@ -9836,6 +9838,7 @@ export default function SearchResults() {
                 return (
                 <div className="grid-item" key={x.id}> 
                     <img src={x.images.downsized_large.url} alt={x.slug} id={x.id} />
+                    <BsFillSuitHeartFill className='heartIcon' />
                 </div>
                 )})}
         </div>   

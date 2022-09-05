@@ -1,6 +1,9 @@
 import React from "react";
 import './random.scss'
 
+import { BsFillSuitHeartFill } from "react-icons/bs";
+
+
 export default function Random() {
 
     const data = [{
@@ -216,6 +219,8 @@ export default function Random() {
                 return (
                 <div className="grid-item-random" key={x.id}> 
                     <img src={x.images.original.url} alt={x.slug} id={x.id} />
+                    <BsFillSuitHeartFill className='heartIcon' />
+
                 </div>
                 )})}  
     </div>

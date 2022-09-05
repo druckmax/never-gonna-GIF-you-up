@@ -1,18 +1,18 @@
 import React from "react";
 import "./favorites.scss";
 
-import {BsFillSuitHeartFill} from 'react-icons/bs'
+import { BsFillSuitHeartFill } from "react-icons/bs";
 
 export default function Favorites() {
   const data = [];
 
   if (data.length === 0)
     return (
-      <div className="emptyArray">
-        <h2>Nothing here yet!</h2>
-        <p>Add your favorite GIF by clicking on the heart icons </p>
-        <BsFillSuitHeartFill className="heartIcon" />
-      </div>
+        <div className="emptyArray">
+          <h2>Nothing here yet!</h2>
+          <p>Add your favorite GIF by clicking on the heart icons </p>
+          <BsFillSuitHeartFill className="heartIcon" />
+        </div>
     );
 
   return (
