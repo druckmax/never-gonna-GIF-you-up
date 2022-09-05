@@ -1,11 +1,13 @@
 .wrapper {
   text-align: center;
+  height: 100vh;
+  position: relative;
 }
 .gridContainer__template {
-  min-height: 75vh;
+  min-height: 70vh;
   width: 80vw;
   max-width: 100rem;
-  margin: auto;
+  margin: 2rem auto;
   border-radius: 15px;
   display: flex;
   justify-content: center;

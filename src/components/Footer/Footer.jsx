@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className={styles.footerClass}>
       <a href="https://giphy.com/" target='_blank' rel="noreferrer">
-        <img src={giphy_banner} alt="giphy banner" loop='true' />
+        <img src={giphy_banner} alt="giphy banner" loop={true} />
       </a>
     </footer>
   );

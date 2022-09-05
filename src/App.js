@@ -23,8 +23,8 @@ function App() {
             <Route path="/random" element={<Random />} />
           </Routes>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </BrowserRouter>
   );
 }
