@@ -1,6 +1,8 @@
 import React from 'react'
 import './trending.scss'
 
+import {BsFillSuitHeartFill} from 'react-icons/bs'
+
 export default function Trending() {
 
     const data = [
@@ -10159,6 +10161,7 @@ export default function Trending() {
                 return (
                 <div className="grid-item" key={x.id}> 
                     <img src={x.images.downsized_large.url} alt={x.slug} id={x.id} />
+                    <BsFillSuitHeartFill className='heartIcon' />
                 </div>
                 )})}
         </div>   
