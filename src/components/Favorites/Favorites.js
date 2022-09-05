@@ -1,6 +1,7 @@
 import React from "react";
 import "./favorites.scss";
 
+
 import { BsFillSuitHeartFill } from "react-icons/bs";
 
 export default function Favorites() {

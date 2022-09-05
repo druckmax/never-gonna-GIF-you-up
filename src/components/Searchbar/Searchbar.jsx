@@ -1,4 +1,5 @@
 import SearchBtn from "./SearchBtn";
+import Header from "../Header/Header";
 import styles from "./Searchbar.module.scss";
 
 import React, { useState } from "react";
@@ -16,6 +17,7 @@ function Searchbar() {
 
   return (
     <form onSubmit={submitHandler} className={styles.searchbar}>
+      <Header />
       <div className={styles.searchbar_Content}>
         <input
           onChange={onChangeHandler}
