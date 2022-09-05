@@ -7,8 +7,7 @@ import Trending from './components/Trending/Trending';
 function App() {
   return (
     <div className='wrapper'>
-      <h1>Welcome</h1>
-      <SearchResults />
+      <Random />
       </div>
   );
 }
