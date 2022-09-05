@@ -1,12 +1,8 @@
-
-
-
-
 .wrapper {
-  text-align: center;
-  width: 100vw;
+  txt-align: center;
   height: 100vh;
- 
+  width: 100vw;
+  position: relative;
 }
 
 #light{
@@ -17,3 +13,128 @@
   background-color: rgb(24, 22, 22);
 }
 
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heartIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(248, 1, 1);
+  font-size: 2.5rem;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    font-size: 3.5rem;
+    transform: translate(4px, -4px);
+  }
+
+  &:active {
+    color: darken(rgb(248, 1, 1), 15);
+    transform: translate(4px, 0);
+  }
+}
+
+.grid-container {
+  line-height: 0;
+  -webkit-column-count: 4;
+  -webkit-column-gap: 10px;
+  -moz-column-count: 4;
+  -moz-column-gap: 10px;
+  column-count: 4;
+  column-gap: 10px;
+
+  margin-left: 30%;
+  padding: 35px;
+  margin-right: 30%;
+
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.501);
+  box-shadow: 0 5px 10px #111
+}
+
+.grid-item {
+  margin: 10px 0;
+  position: relative;
+
+  img {
+    width: 250px;
+    height: 100%;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(17, 17, 17, 0.6);
+    transition: all .2s;
+  }
+
+  &:hover::before {
+    background: rgba(17, 17, 17, 0.2);
+  }
+}
+
+.grid-item-random {
+  margin: 10px 0;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Responsive Design PHONES
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    -webkit-column-count: 1;
+    -webkit-column-gap: 5px;
+    -moz-column-count: 1;
+    -moz-column-gap: 5px;
+    column-count: 1;
+    column-gap: 5px;
+  }
+}
+
+// Responsive Design BIG PHONES and SMALL TABLETS
+@media only screen and (min-width: 600px) {
+  .grid-container {
+    -webkit-column-count: 2;
+    -webkit-column-gap: 7px;
+    -moz-column-count: 2;
+    -moz-column-gap: 7px;
+    column-count: 2;
+    column-gap: 7px;
+  }
+}
+
+// Responsive Design AVERAGE TABLETS
+@media only screen and (min-width: 768px) {
+  .grid-container {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 9px;
+    -moz-column-count: 3;
+    -moz-column-gap: 9px;
+    column-count: 3;
+    column-gap: 9px;
+  }
+}
+
+// Responsive Design DESKTOP
+@media only screen and (min-width: 1200px) {
+  .grid-container {
+    -webkit-column-count: 4;
+    -webkit-column-gap: 10px;
+    -moz-column-count: 4;
+    -moz-column-gap: 10px;
+    column-count: 4;
+    column-gap: 10px;
+  }
+}
