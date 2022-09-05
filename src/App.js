@@ -18,7 +18,7 @@ function App() {
         <Navbar />
         <div className="gridContainer__template">
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<SearchResults />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/trending" element={<Trending />} />
             <Route path="/random" element={<Random />} />
