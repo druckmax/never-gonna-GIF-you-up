@@ -3,7 +3,7 @@ import placeholder from "./img/placeholder.png";
 import NavbarBtn from "./NavbarBtn";
 
 import styles from "./Navbar.module.scss";
-import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
 
 function Navbar() {
   const [showToggle, setShowToggle] = useState(false);
@@ -32,7 +32,7 @@ function Navbar() {
           onClick={showToggleHandler}
           className={`${styles.arrow} ${styles.arrowRight}`}
         >
-          <BsArrowRight />
+          <BsArrowRightCircle />
         </button>
       </div>
 
@@ -45,10 +45,12 @@ function Navbar() {
           onClick={showToggleHandler}
           className={`${styles.arrow} ${styles.arrowLeft}`}
         >
-          <BsArrowLeft />
+          <BsArrowLeftCircle />
         </button>
         <div className={styles.toggle}>
+          Dark
           <img src={placeholder} alt="" />
+          Light
         </div>
       </div>
     </div>

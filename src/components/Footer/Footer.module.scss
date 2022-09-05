@@ -1,0 +1,12 @@
+.footerClass {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  img {
+    width: 25vh;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+}

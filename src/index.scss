@@ -15,8 +15,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   font-size: 1.6rem;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
+  background-color: #2B2B2B;
+  color: #fff;
+  overflow-x: hidden;
 }
 
 code {
