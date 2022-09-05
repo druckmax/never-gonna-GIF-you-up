@@ -2,11 +2,10 @@
   width: 100%;
   position: relative;
   position: fixed;
-  bottom: 0;
+  bottom: -1.5rem;
 
   img {
     height: 5rem;
-    object-fit: contain;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
   }

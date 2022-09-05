@@ -9829,6 +9829,7 @@ export default function SearchResults() {
     ]
 
   return (
+    
     <div className="content-container">
         <div className="grid-container">
             {data.map(x => {
