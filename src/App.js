@@ -1,5 +1,5 @@
 import './App.scss';
-import MyFavorites from './components/MyFavorites/MyFavorites';
+import Favorites from './components/Favorites/Favorites';
 import Random from './components/Random/Random';
 import SearchResults from './components/SearchResults/SearchResults';
 import Trending from './components/Trending/Trending';

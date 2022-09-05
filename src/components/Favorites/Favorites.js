@@ -1,7 +1,7 @@
 import React from 'react'
-import './myFavorites.scss'
+import './favorites.scss'
 
-export default function MyFavorites() {
+export default function Favorites() {
 
     const data = [
         
