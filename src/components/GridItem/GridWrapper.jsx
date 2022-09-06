@@ -1,9 +1,9 @@
 import React from 'react'
 import { useContext } from 'react'
-import { ThemeContext } from '../../App'
+import { MainContext } from '../../context/context'
 
 function GridWrapper({children}) {
-  const lightswitch = useContext(ThemeContext)
+  const lightswitch = useContext(MainContext)
 
   return (
     <div className={`grid-container ${lightswitch.theme === 'light' && 'grid-container-light'}`}>

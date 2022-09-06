@@ -4,10 +4,10 @@ import giphy_banner_white from "./img/giphy_banner_white.gif";
 import styles from "./Header.module.scss";
 
 import { useContext } from "react";
-import { ThemeContext } from "../../App";
+import { MainContext } from "../../context/context";
 
 function Footer() {
-  const lightSwitch = useContext(ThemeContext);
+  const lightSwitch = useContext(MainContext);
 
   const urlSwitch = () => {
     return lightSwitch.theme === "dark" ? giphy_banner : giphy_banner_white;

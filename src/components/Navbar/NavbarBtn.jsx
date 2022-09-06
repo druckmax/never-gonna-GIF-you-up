@@ -3,10 +3,10 @@ import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
 
 import { useContext } from "react";
-import { ThemeContext } from "../../App";
+import { MainContext } from "../../context/context";
 
 function NavbarBtn({ text, link, className, route }) {
-  const lightSwitch = useContext(ThemeContext)
+  const lightSwitch = useContext(MainContext)
 
   console.log(className === 'navLink')
 

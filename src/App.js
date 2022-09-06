@@ -11,15 +11,13 @@ import Random from './components/Random/Random';
 import SearchResults from './components/SearchResults/SearchResults';
 import Trending from './components/Trending/Trending';
 import Searchbar from "./components/Searchbar/Searchbar";
- 
-
-export const ThemeContext= createContext(null);
- 
 
 function App() {
+  const context = useContext(MainContext)
+
   return (
     <BrowserRouter>
-    <div className='wrapper' id={theme}>
+    <div className='wrapper' id={context.theme}>
         <Searchbar />
         <Navbar />
         <div className="content-container">

@@ -1,11 +1,9 @@
-import React, { useContext } from 'react'
 import SearchBtn from "./SearchBtn";
 import { MainContext } from "../../context/context";
 import Header from "../Header/Header";
 import styles from "./Searchbar.module.scss";
 
-import React, { useState, useContext } from "react";
-import { ThemeContext } from "../../App";
+import { useState, useContext } from "react";
 
 function Searchbar() {
 
@@ -17,13 +15,14 @@ function Searchbar() {
     e.preventDefault();
 
     //*todo => setting the search query in the context
+    //context.fetch
   };
 
   return (
     <form
       onSubmit={submitHandler}
       className={`${styles.searchbar} ${
-        lightSwitch.theme === "dark" ? styles.dark : styles.light
+        context.theme === "dark" ? styles.dark : styles.light
       } `}
     >
       <Header />
