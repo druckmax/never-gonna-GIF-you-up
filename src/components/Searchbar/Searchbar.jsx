@@ -3,19 +3,20 @@ import { MainContext } from "../../context/context";
 import Header from "../Header/Header";
 import styles from "./Searchbar.module.scss";
 
-import { useState, useContext } from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Searchbar() {
-
-  const context = useContext(MainContext)
+  const context = useContext(MainContext);
+  const navigate = useNavigate()
 
   const onChangeHandler = (e) => context.setInput(e.target.value);
 
   const submitHandler = (e) => {
     e.preventDefault();
-
     //*todo => setting the search query in the context
-    //context.fetch
+    context.fetchSearch(context.input);
+    navigate('/')
   };
 
   return (

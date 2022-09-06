@@ -1,10 +1,12 @@
 import React from "react";
-import {BsFillSuitHeartFill} from 'react-icons/bs'
+import { BsFillSuitHeartFill } from "react-icons/bs";
 
-function GridItem({className, img, alt, id}) {
+function GridItem({ url, className, img, alt, id }) {
   return (
     <div className={className} key={id}>
-      <img src={img} alt={alt} id={id} />
+      <a href={url} target='_blank' rel='noreferrer'>
+        <img src={img} alt={alt} id={id} />
+      </a>
       <BsFillSuitHeartFill className="heartIcon" />
     </div>
   );

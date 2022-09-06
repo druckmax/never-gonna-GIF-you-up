@@ -25,6 +25,7 @@ export default function Trending() {
       {context.dataTrending.map((x) => {
         return (
           <GridItem
+            url={x.url}
             key={x.id}
             className={"grid-item"}
             img={x.images.downsized_large.url}
