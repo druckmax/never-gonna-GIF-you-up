@@ -61,6 +61,16 @@
   max-width: 150rem;
   background-color: rgba(0, 0, 0, 0.501);
   box-shadow: 0 5px 10px #111;
+
+  h1 {
+    line-height: 1.5;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .5;
+  }
 }
 
 .grid-container-light {

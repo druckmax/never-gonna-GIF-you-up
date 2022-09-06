@@ -8,6 +8,18 @@ import GridWrapper from "../GridItem/GridWrapper";
 export default function SearchResults() {
   const context = useContext(MainContext);
 
+  if (context.dataSearch.length === 0) {
+    return (
+      <GridWrapper>
+        <h1>
+          You can search for a GIF, check which GIFS are trending or generate a
+          random one ☺️
+        </h1>
+        <p></p>
+      </GridWrapper>
+    );
+  }
+
   return (
     <GridWrapper>
       {context.dataSearch.map((x) => {
