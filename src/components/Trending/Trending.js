@@ -8,9 +8,7 @@ export default function Trending() {
   const context = useContext(MainContext);
 
   const fetchTrending = async () => {
-    const response = await fetch(
-      "https://api.giphy.com/v1/gifs/trending?api_key=GwI7qfLYcyv0f8HgMdsx1M1SUthipXW1&limit=50&rating=r"
-    );
+    const response = await fetch("https://api.giphy.com/v1/gifs/trending?api_key=GwI7qfLYcyv0f8HgMdsx1M1SUthipXW1&limit=50&rating=r");
     const data = await response.json();
     console.log(data);
     context.setDataTrending(data.data);
@@ -31,6 +29,7 @@ export default function Trending() {
             img={x.images.downsized_large.url}
             alt={x.slug}
             id={x.id}
+            item={x}
           />
         );
       })}
