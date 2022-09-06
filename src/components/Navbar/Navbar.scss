@@ -1,40 +1,43 @@
 .navbarContainer {
-  height: 5vh;
-  margin: 2rem 0;
-  color: #fff;
+  margin: 2rem auto;
+  padding: 1rem 0;
   font-size: 2rem;
-  width: 100%;
+  width: 80vw;
+  max-width: 100rem;
   position: relative;
 
   .navLinkContainer {
-    width: 80vw;
-    max-width: 100rem;
-    margin: auto;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 2rem;
     align-items: center;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    gap: 2rem;
+    // top: 50%;
+    // transform: translateY(-50%);
     transition: all .5s;
     opacity: 1;
   }
 
+  @media only screen and (max-width: 490px) {
+    .navLinkContainer {
+      justify-content: space-around;
+    }
+  }
+
   .transformNavLinks {
     opacity: 0;
-    transform: translate(-100vw, -50%);
+    transform: translateX(-100vw);
   }
 
   .toggleContainer {
     width: 80vw;
     max-width: 100rem;
-    margin: auto;
-    position: relative;
+    position: absolute;
     opacity: 0;
     top: 50%;
-    transform: translate(100vw, -150%);
+    // top: 50%;
+    transform: translate(100vw, -50%);
     transition: all .5s;
 
     .toggle {
@@ -48,11 +51,13 @@
 
   .transformToggle {
     opacity: 1;
-    transform: translate(0vw, -150%);
+    transform: translate(0vw, -50%);
   }
 
   .arrow {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 3rem;
     background-color: transparent;
     border: none;
@@ -81,14 +86,17 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 10px #222;
+    transition: all .2s;
 
     &:hover {
       background: linear-gradient(270deg, darken(#FD6569, 10) 0%, darken(#D354B4, 10) 47.75%, darken(#AC44FB, 10) 95.98%);
-    }
-    &:active {
-      background: linear-gradient(270deg, darken(#FD6569, 15) 0%, darken(#D354B4, 15) 47.75%, darken(#AC44FB, 15) 95.98%);
+      transform: translateY(-1px);
     }
 
+    &:active {
+      background: linear-gradient(270deg, darken(#FD6569, 10) 0%, darken(#D354B4, 10) 47.75%, darken(#AC44FB, 10) 95.98%);
+      transform: translateY(1px);
+    }
 
     .navLink {
       text-decoration: none;
@@ -103,20 +111,19 @@
       align-items: center;
     }
 
+    .navLink-light {
+      color: inherit;
+      background-color: #efefef;
+    }
+
     .randomBtn {
       width: 15rem;
       height: 5rem;
       background-color: transparent;
-      background: linear-gradient(270deg, #FD6569 0%, #D354B4 47.75%, #AC44FB 95.98%);
-
-      &:hover {
-        background: linear-gradient(270deg, darken(#FD6569, 5) 0%, darken(#D354B4, 5) 47.75%, darken(#AC44FB, 5) 95.98%);
-      }
-      &:active {
-        background: linear-gradient(270deg, darken(#FD6569, 10) 0%, darken(#D354B4, 10) 47.75%, darken(#AC44FB, 10) 95.98%);
-        transform: translateY(2px);
-      }
     }
+  }
+  .borderWrapper-light {
+    box-shadow: 0 2px 10px #aaa;
   }
 }
 

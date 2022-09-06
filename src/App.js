@@ -11,10 +11,8 @@ import Random from './components/Random/Random';
 import SearchResults from './components/SearchResults/SearchResults';
 import Trending from './components/Trending/Trending';
 import Searchbar from "./components/Searchbar/Searchbar";
- 
 
 function App() {
-
   const context = useContext(MainContext)
 
   return (
@@ -22,11 +20,11 @@ function App() {
     <div className='wrapper' id={context.theme}>
         <Searchbar />
         <Navbar />
-        <div className="gridContainer__template">
+        <div className="content-container">
           <Routes>
-            <Route path="/" element={<SearchResults />} />
-            <Route path="/favorites" element={<Favorites />} />
-            <Route path="/trending" element={<Trending />} />
+              <Route path="/" element={<SearchResults />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/trending" element={<Trending />} />
             <Route path="/random" element={<Random />} />
           </Routes>
         </div>

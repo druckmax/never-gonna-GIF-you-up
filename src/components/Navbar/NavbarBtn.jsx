@@ -1,14 +1,21 @@
 import React from "react";
-import styles from './Navbar.module.scss'
+import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
 
-function NavbarBtn({text, link, style, route}) {
+import { useContext } from "react";
+import { MainContext } from "../../context/context";
+
+function NavbarBtn({ text, link, className, route }) {
+  const lightSwitch = useContext(MainContext)
+
+  console.log(className === 'navLink')
+
   return (
-      <div className={styles.borderWrapper}>
-        <NavLink to={route} className={style} href={link}>
-          {text}
-        </NavLink>
-      </div>
+    <div className={`borderWrapper ${lightSwitch.theme === 'light' && 'borderWrapper-light'}`}>
+      <NavLink to={route} className={(className === 'navLink' && lightSwitch.theme === 'light') ? `${className} navLink-light` : className} href={link}>
+        {text}
+      </NavLink>
+    </div>
   );
 }
 

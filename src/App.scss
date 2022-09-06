@@ -1,8 +1,9 @@
 .wrapper {
   text-align: center;
-  height: 100vh;
   width: 100vw;
+  min-height: 100vh;
   position: relative;
+  transition: all .5s;
 }
 
 #light{
@@ -17,7 +18,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+  min-height: 50vh;
 }
 
 .heartIcon {
@@ -43,11 +46,11 @@
 
 .grid-container {
   line-height: 0;
-  -webkit-column-count: 4;
+  -webkit-column-count: 1;
   -webkit-column-gap: 1rem;
-  -moz-column-count: 4;
+  -moz-column-count: 1;
   -moz-column-gap: 1rem;
-  column-count: 4;
+  column-count: 1;
   column-gap: 1rem;
 
   margin-left: 30%;
@@ -58,7 +61,11 @@
   width: 100%;
   max-width: 150rem;
   background-color: rgba(0, 0, 0, 0.501);
-  box-shadow: 0 5px 10px #111
+  box-shadow: 0 5px 10px #111;
+}
+.grid-container-light {
+  background-color: rgba(227, 227, 227, 0.559);
+  box-shadow: 0 0px 10px #bbb
 }
 
 .grid-item {
@@ -66,7 +73,7 @@
   position: relative;
 
   img {
-    width: 250px;
+    width: 30rem;
     height: 100%;
   }
 
@@ -86,10 +93,7 @@
 
 .grid-item-random {
   margin: 10px 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
 
   img {
     border-radius: 15px;
@@ -99,7 +103,16 @@
 }
 
 // Responsive Design PHONES
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 300px) {
+  .grid-item {
+    img {
+      width: 25rem;
+    }
+  }
+
+}
+
+@media only screen and (min-width: 400px) {
   .grid-container {
     -webkit-column-count: 1;
     -webkit-column-gap: 5px;
@@ -120,10 +133,16 @@
     column-count: 2;
     column-gap: 7px;
   }
+
+  .grid-item {
+    img {
+      width: 25rem;
+    }
+  }
 }
 
 // Responsive Design AVERAGE TABLETS
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 852px) {
   .grid-container {
     -webkit-column-count: 3;
     -webkit-column-gap: 9px;

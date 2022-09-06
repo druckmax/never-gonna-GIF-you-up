@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { MainContext } from '../../context/context';
-import './random.scss'
-import { BsFillSuitHeartFill } from "react-icons/bs";
+import "./random.scss";import GridItem from "../GridItem/GridItem";
 
 
 export default function Random() {
@@ -18,13 +17,15 @@ export default function Random() {
       fetchRandom()
     },[])
 
-    console.log(context.dataRandom.images);
   return (
-    <div className="content-container">
-                <div className="grid-item-random" key={context.dataRandom?.id}> 
-                    <img src={context.dataRandom.images?.original.url} alt={context.dataRandom?.slug} id={context.dataRandom?.id} />
-                    <BsFillSuitHeartFill className='heartIcon' />
-                </div>
-    </div>
+    <>
+          <GridItem
+            className={"grid-item-random"}
+            img={context.dataRandom.images?.original.url}
+            alt={context.dataRandom?.slug}
+            id={context.dataRandom?.id}
+            key={context.dataRandom?.id}
+          />
+    </>
   );
 }

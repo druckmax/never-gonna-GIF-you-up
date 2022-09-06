@@ -4,7 +4,7 @@ import NavbarBtn from "./NavbarBtn";
 import MySwitch from "./mySwitch";
 import { MainContext } from "../../context/context";
 
-import styles from "./Navbar.module.scss";
+import "./Navbar.scss";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
 
 function Navbar() {
@@ -15,53 +15,50 @@ function Navbar() {
   const showToggleHandler = () => {
     showToggle ? setShowToggle(false) : setShowToggle(true);
   };
-
-  console.log(showToggle);
-
+  
   return (
-    <div className={styles.navbarContainer}>
+    <div className='navbarContainer'>
       <div
-        className={`${styles.navLinkContainer}
-        ${showToggle ? styles.transformNavLinks : null}`}
+        className={`navLinkContainer ${showToggle && 'transformNavLinks'}`}
       >
         <NavbarBtn
           text="MyFavorites"
           link="/"
-          style={styles.navLink}
+          className='navLink'
           route={"/favorites"}
         />
         <NavbarBtn
           text="Trending"
           link="/"
-          style={styles.navLink}
+          className='navLink'
           route={"/trending"}
         />
         <NavbarBtn
           text="Random"
           link="/"
-          style={`${styles.navLink} ${styles.randomBtn}`}
+          className='navLink randomBtn'
           route={"/random"}
         />
         <button
           onClick={showToggleHandler}
-          className={`${styles.arrow} ${styles.arrowRight}`}
+          className='arrow arrowRight'
         >
           <BsArrowRightCircle />
         </button>
       </div>
 
       <div
-        className={`${styles.toggleContainer} ${
-          showToggle ? styles.transformToggle : null
+        className={`toggleContainer ${
+          showToggle ? 'transformToggle' : null
         }`}
       >
         <button
           onClick={showToggleHandler}
-          className={`${styles.arrow} ${styles.arrowLeft}`}
+          className='arrow arrowLeft'
         >
           <BsArrowLeftCircle />
         </button>
-        <div className={styles.toggle}>
+        <div className='toggle'>
           Dark
           <div className="switch">
             {
