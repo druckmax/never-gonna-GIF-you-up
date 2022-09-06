@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 // import placeholder from "./img/placeholder.png";
 import NavbarBtn from "./NavbarBtn";
 import MySwitch from "./mySwitch";
-import { useContext } from "react";
-import { ThemeContext } from "../../App";
+import { MainContext } from "../../context/context";
 
 import styles from "./Navbar.module.scss";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
@@ -11,7 +10,7 @@ import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
 function Navbar() {
   const [showToggle, setShowToggle] = useState(false);
 
-  const theme = useContext(ThemeContext);
+  const context = useContext(MainContext);
 
   const showToggleHandler = () => {
     showToggle ? setShowToggle(false) : setShowToggle(true);
@@ -67,8 +66,8 @@ function Navbar() {
           <div className="switch">
             {
               <MySwitch
-                toggleTheme={theme.toggleTheme}
-                checked={theme.theme === "dark"}
+                toggleTheme={context.toggleTheme}
+                checked={context.theme === "dark"}
               />
             }
           </div>

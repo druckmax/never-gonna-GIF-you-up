@@ -1,31 +1,25 @@
-
-import React, {createContext,useState} from 'react';
+import React, { useContext } from 'react';
+import { MainContext } from './context/context'
 
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './App.scss';
+
 import Favorites from './components/Favorites/Favorites';
 import Random from './components/Random/Random';
 import SearchResults from './components/SearchResults/SearchResults';
 import Trending from './components/Trending/Trending';
-
 import Searchbar from "./components/Searchbar/Searchbar";
-
-
-export const ThemeContext= createContext(null);
  
 
 function App() {
-  const [theme, setTheme]= useState("dark");
 
-  const toggleTheme= () => setTheme((curr)=>(curr==="light" ? "dark":"light"));
-  ;
+  const context = useContext(MainContext)
+
   return (
-
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
     <BrowserRouter>
-    <div className='wrapper' id={theme}>
+    <div className='wrapper' id={context.theme}>
         <Searchbar />
         <Navbar />
         <div className="gridContainer__template">
@@ -38,7 +32,6 @@ function App() {
         </div>
       </div>
     </BrowserRouter>
-    </ThemeContext.Provider>
   );
 }
 
