@@ -1,4 +1,6 @@
+import React, { useContext } from 'react'
 import SearchBtn from "./SearchBtn";
+import { MainContext } from "../../context/context";
 import Header from "../Header/Header";
 import styles from "./Searchbar.module.scss";
 
@@ -6,11 +8,10 @@ import React, { useState, useContext } from "react";
 import { ThemeContext } from "../../App";
 
 function Searchbar() {
-  const [input, setInput] = useState("");
 
-  const lightSwitch = useContext(ThemeContext);
+  const context = useContext(MainContext)
 
-  const onChangeHandler = (e) => setInput(e.target.value);
+  const onChangeHandler = (e) => context.setInput(e.target.value);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -29,7 +30,7 @@ function Searchbar() {
       <div className={styles.searchbar_Content}>
         <input
           onChange={onChangeHandler}
-          value={input}
+          value={context.input}
           type="text"
           className={styles.searchInput}
           placeholder="Search for a GIF :)"

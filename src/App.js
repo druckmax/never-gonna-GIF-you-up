@@ -1,25 +1,23 @@
-
-import React, {createContext,useState} from 'react';
-import './App.scss';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useContext } from 'react';
+import { MainContext } from './context/context'
 
 import Navbar from "./components/Navbar/Navbar";
-import Searchbar from "./components/Searchbar/Searchbar";
-import SearchResults from './components/SearchResults/SearchResults';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import './App.scss';
+
 import Favorites from './components/Favorites/Favorites';
-import Trending from './components/Trending/Trending';
 import Random from './components/Random/Random';
+import SearchResults from './components/SearchResults/SearchResults';
+import Trending from './components/Trending/Trending';
+import Searchbar from "./components/Searchbar/Searchbar";
+ 
 
 export const ThemeContext= createContext(null);
  
 
 function App() {
-  const [theme, setTheme]= useState("dark");
-
-  const toggleTheme= () => setTheme((curr)=>(curr==="light" ? "dark":"light"));
-
   return (
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
     <BrowserRouter>
     <div className='wrapper' id={theme}>
         <Searchbar />
@@ -34,7 +32,6 @@ function App() {
         </div>
       </div>
     </BrowserRouter>
-    </ThemeContext.Provider>
   );
 }
 
