@@ -2,10 +2,13 @@ import SearchBtn from "./SearchBtn";
 import Header from "../Header/Header";
 import styles from "./Searchbar.module.scss";
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "../../App";
 
 function Searchbar() {
   const [input, setInput] = useState("");
+
+  const lightSwitch = useContext(ThemeContext);
 
   const onChangeHandler = (e) => setInput(e.target.value);
 
@@ -16,7 +19,12 @@ function Searchbar() {
   };
 
   return (
-    <form onSubmit={submitHandler} className={styles.searchbar}>
+    <form
+      onSubmit={submitHandler}
+      className={`${styles.searchbar} ${
+        lightSwitch.theme === "dark" ? styles.dark : styles.light
+      } `}
+    >
       <Header />
       <div className={styles.searchbar_Content}>
         <input

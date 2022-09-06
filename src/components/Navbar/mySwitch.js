@@ -2,11 +2,12 @@ import React from "react";
 import Switch from "react-switch";
 import moon from "./img/moon-solid.svg";
 
-export default function MySwitch({ toggleTheme, checked }) {
+export default function MySwitch(props) {
+console.log(props)
   return (
     <Switch
-      checked={checked}
-      onChange={toggleTheme}
+      checked={props.checked}
+      onChange={props.toggleTheme}
       onColor="#494E79"
       offColor="#FFC794"
       offHandleColor="#444"
