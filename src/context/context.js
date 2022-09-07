@@ -1,11 +1,15 @@
 import React, { useState, createContext } from "react";
-
+// Main Context export
 export const MainContext = createContext();
 
 export default function ContextProvider(props) {
+  const API_KEY_1 = process.env.REACT_APP_API_KEY_JUDE;
+  const API_KEY_2 = process.env.REACT_APP_API_KEY_MAX;
+
+  console.log(API_KEY_1, API_KEY_2)
+
   //? State Variable for Switch Toggle
   const [theme, setTheme] = useState("dark");
-
   //? Theme Toggle Function
   const toggleTheme = () =>
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
@@ -25,7 +29,7 @@ export default function ContextProvider(props) {
   const fetchSearch = async () => {
     setLoading(true)
     const response = await fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=GwI7qfLYcyv0f8HgMdsx1M1SUthipXW1&q=${input}&limit=50&offset=0&rating=r&lang=en`
+      `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY_1}&q=${input}&limit=50&offset=0&rating=r&lang=en`
     );
     const data = await response.json();
     console.log(data);
@@ -36,7 +40,7 @@ export default function ContextProvider(props) {
     console.log('yes')
     setLoading(true);
     const response = await fetch(
-      "https://api.giphy.com/v1/gifs/random?api_key=GwI7qfLYcyv0f8HgMdsx1M1SUthipXW1&tag=&rating=r"
+      `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY_1}&tag=&rating=r`
     );
     const data = await response.json();
     setDataRandom(data.data);
@@ -46,6 +50,7 @@ export default function ContextProvider(props) {
   return (
     <MainContext.Provider
       value={{
+        API_KEY_1,
         theme,
         setTheme,
         toggleTheme,
