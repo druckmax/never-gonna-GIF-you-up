@@ -21,12 +21,12 @@ export default function Random() {
   return (
     <>
       <GridItem
-        item={context?.dataRandom}
+        item={context.dataRandom}
         className={"grid-item-random"}
-        img={context?.dataRandom.images?.original.url}
-        alt={context?.dataRandom?.slug}
-        id={context?.dataRandom?.id}
-        key={context?.dataRandom?.id}
+        img={context.dataRandom.images?.original.url}
+        alt={context.dataRandom?.slug}
+        id={context.dataRandom?.id}
+        key={context.dataRandom?.id}
       />
     </>
   );

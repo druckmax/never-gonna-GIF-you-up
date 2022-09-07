@@ -11,7 +11,7 @@ export default function Trending() {
   const fetchTrending = async () => {
     context.setLoading(true);
     const response = await fetch(
-      `https://api.giphy.com/v1/gifs/trending?api_key=${context.API_KEY_1}&limit=50&rating=r`
+      "https://api.giphy.com/v1/gifs/trending?api_key=GwI7qfLYcyv0f8HgMdsx1M1SUthipXW1&limit=50&rating=r"
     );
     const data = await response.json();
     console.log(data);

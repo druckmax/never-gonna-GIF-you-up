@@ -44,6 +44,22 @@
   }
 }
 
+.heartGrey {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  color: rgba(99, 99, 99, 0.719);
+  font-size: 2.5rem;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    font-size: 3.5rem;
+    transform: translate(4px, -4px);
+  }
+}
+
 .heartIconAnimation {
   animation: fadeIn .5s;
 
