@@ -3,6 +3,13 @@ import React, { useState, createContext } from "react";
 export const MainContext = createContext();
 
 export default function ContextProvider(props) {
+  // const API_KEY_1 = process.env.REACT_APP_API_KEY_JUDE;
+  // const API_KEY_2 = process.env.REACT_APP_API_KEY_MAX;
+  const API_KEY_1 = "GwI7qfLYcyv0f8HgMdsx1M1SUthipXW1";
+  const API_KEY_2 = "00H6atmqorBQUpmQ8RjPERJzDuof4Hi";
+  
+  console.log(API_KEY_1, API_KEY_2)
+
   //? State Variable for Switch Toggle
   const [theme, setTheme] = useState("dark");
 

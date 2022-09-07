@@ -16,6 +16,7 @@ function App() {
   const context = useContext(MainContext)
 
   return (
+    // When deploying use HashRouter!
     <BrowserRouter>
     <div className='wrapper' id={context.theme}>
         <Searchbar />
