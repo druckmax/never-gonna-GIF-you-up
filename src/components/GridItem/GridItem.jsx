@@ -10,9 +10,13 @@ function GridItem({ item, url, className, img, alt, id }) {
   const [icon, setIcon] = useState(true);
 
   const addToFavorites = () => {
-    context.setDataFavorites((x) => [...x, item]);
-    setIcon(false);
+    context.setDataFavorites((x) => {
+      if ([...x].some(x => x.id === id)) return x;
+      setIcon(false);
+      return [...x, item];
+    });
   };
+
   return (
     <div className={className} key={id}>
       <a href={url} target="_blank" rel="noreferrer">
