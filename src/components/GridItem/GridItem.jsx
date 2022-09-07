@@ -16,17 +16,16 @@ function GridItem({ item, url, className, img, alt, id }) {
     <div className={className} key={id}>
       <a href={url} target="_blank" rel="noreferrer">
         {/* <LazyLoadImage alt={alt} height={itemHeight} width={itemWidth} src={img} /> */}
-        <img
-          onLoad={() => setImgIsLoaded(true)}
-          src={img}
-          alt={alt}
-          id={id}
-        />
+        <img onLoad={() => setImgIsLoaded(true)} src={img} alt={alt} id={id} />
       </a>
-      {imgIsLoaded && <BsFillSuitHeartFill className="heartIcon heartIconAnimation" />}
+      {imgIsLoaded && (
+        <BsFillSuitHeartFill
+          className="heartIcon heartIconAnimation"
+          onClick={() => context.setDataFavorites((x) => [...x, item])}
+        />
+      )}
     </div>
   );
 }
 
 export default GridItem;
-

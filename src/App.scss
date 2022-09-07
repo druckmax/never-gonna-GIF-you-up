@@ -45,14 +45,14 @@
 }
 
 .heartIconAnimation {
-  animation: fadeIn 1s;
+  animation: fadeIn .8s;
 
   @keyframes fadeIn {
     0% {
       opacity: 0;
       font-size: 0;
     }
-    50% {
+    80% {
       opacity: 1;
       font-size: 3.5rem;
     }
