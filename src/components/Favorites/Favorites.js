@@ -3,7 +3,7 @@ import { MainContext } from '../../context/context';
 import './favorites.scss'
 
 import { BsFillSuitHeartFill } from "react-icons/bs";
-import GridItem from "../GridItem/GridItem";
+import GridItemFav from "../GridItemFav/GridItemFav";
 import GridWrapper from "../GridItem/GridWrapper";
 
 
@@ -24,7 +24,7 @@ export default function Favorites() {
     <GridWrapper>
       {context.dataFavorites.map((x) => {
         return (
-          <GridItem
+          <GridItemFav
             url={x?.url}
             className={"grid-item"}
             img={x?.images.downsized_large.url}
