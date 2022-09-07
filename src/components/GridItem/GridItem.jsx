@@ -20,7 +20,6 @@ function GridItem({ item, url, className, img, alt, id }) {
   return (
     <div className={className} key={id}>
       <a href={url} target="_blank" rel="noreferrer">
-        {/* <LazyLoadImage alt={alt} height={itemHeight} width={itemWidth} src={img} /> */}
         <img onLoad={() => setImgIsLoaded(true)} src={img} alt={alt} id={id} />
       </a>
       {imgIsLoaded && (
