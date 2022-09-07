@@ -15,7 +15,7 @@ function GridItemFav({ url, className, img, alt, id, item }) {
       <a href={url} target='_blank' rel='noreferrer'>
         <img src={img} alt={alt} id={id} />
       </a>
-      <ImCross className="heartIcon" onClick={() => removeItem()}/>
+      <ImCross className="heartIcon xIcon" onClick={() => removeItem()}/>
     </div>
   );
 }
