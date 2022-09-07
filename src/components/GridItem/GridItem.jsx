@@ -7,33 +7,27 @@ function GridItem({ item, url, className, img, alt, id }) {
 
   // Loading state for an image
   const [imgIsLoaded, setImgIsLoaded] = useState(false);
-  const [icon, setIcon] = useState(true)
-
-  console.log(item);
-  const itemHeight = item.images.original.height;
-  const itemWidth = item.images.original.width;
+  const [icon, setIcon] = useState(true);
 
   const addToFavorites = () => {
-    context.setDataFavorites((x) => [...x, item])
-    setIcon(false)
-  }
-
+    context.setDataFavorites((x) => [...x, item]);
+    setIcon(false);
+  };
   return (
     <div className={className} key={id}>
       <a href={url} target="_blank" rel="noreferrer">
         <img onLoad={() => setImgIsLoaded(true)} src={img} alt={alt} id={id} />
       </a>
-      {imgIsLoaded ? icon ? (
-        <BsFillSuitHeartFill
-          className="heartIcon heartIconAnimation"
-          onClick={() => addToFavorites()}
-        />
-      ) : (
-        <BsFillSuitHeartFill
-          className="heartGrey heartIconAnimation"
-        /> 
-      ) : null
-    }
+      {imgIsLoaded ? (
+        icon ? (
+          <BsFillSuitHeartFill
+            className="heartIcon heartIconAnimation"
+            onClick={() => addToFavorites()}
+          />
+        ) : (
+          <BsFillSuitHeartFill className="heartIcon heartGrey heartIconAnimation" />
+        )
+      ) : null}
     </div>
   );
 }
