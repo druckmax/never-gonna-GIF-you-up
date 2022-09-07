@@ -17,6 +17,7 @@ function Searchbar() {
     //*todo => setting the search query in the context
     context.fetchSearch(context.input);
     navigate('/')
+    setTimeout(() => context.setLoading(false), 1000);
   };
 
   return (

@@ -5,14 +5,31 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { MainContext } from "../../context/context";
 
-function NavbarBtn({ text, link, className, route }) {
-  const lightSwitch = useContext(MainContext)
+function NavbarBtn({ randomFetchBtn, text, link, className, route }) {
+  const context = useContext(MainContext);
 
-  console.log(className === 'navLink')
+  const randomFetchBtnHandler = () => {
+    if (randomFetchBtn) {
+      context.fetchRandom();
+    }
+  };
 
   return (
-    <div className={`borderWrapper ${lightSwitch.theme === 'light' && 'borderWrapper-light'}`}>
-      <NavLink to={route} className={(className === 'navLink' && lightSwitch.theme === 'light') ? `${className} navLink-light` : className} href={link}>
+    <div
+      className={`borderWrapper ${
+        context.theme === "light" && "borderWrapper-light"
+      }`}
+    >
+      <NavLink
+        onClick={randomFetchBtnHandler}
+        to={route}
+        className={
+          className === "navLink" && context.theme === "light"
+            ? `${className} navLink-light`
+            : className
+        }
+        href={link}
+      >
         {text}
       </NavLink>
     </div>
