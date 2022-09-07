@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './App.scss';
-
+import NotFound from './components/NotFound/NotFound';
 import Favorites from './components/Favorites/Favorites';
 import Random from './components/Random/Random';
 import SearchResults from './components/SearchResults/SearchResults';
@@ -26,6 +26,7 @@ function App() {
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/trending" element={<Trending />} />
               <Route path="/random" element={<Random />} />
+              <Route path="*" element={<NotFound/>} />
           </Routes>
         </div>
       </div>
