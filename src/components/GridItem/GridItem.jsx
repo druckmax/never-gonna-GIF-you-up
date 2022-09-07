@@ -12,6 +12,11 @@ function GridItem({ item, url, className, img, alt, id }) {
   const itemHeight = item.images.original.height;
   const itemWidth = item.images.original.width;
 
+  const addToFavorites = (e) => {
+    context.setDataFavorites((x) => [...x, item])
+    e.target.remove()
+  }
+
   return (
     <div className={className} key={id}>
       <a href={url} target="_blank" rel="noreferrer">
@@ -21,7 +26,7 @@ function GridItem({ item, url, className, img, alt, id }) {
       {imgIsLoaded && (
         <BsFillSuitHeartFill
           className="heartIcon heartIconAnimation"
-          onClick={() => context.setDataFavorites((x) => [...x, item])}
+          onClick={() => addToFavorites}
         />
       )}
     </div>
