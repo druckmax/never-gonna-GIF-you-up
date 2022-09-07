@@ -3,12 +3,16 @@ import React, { useEffect, useContext } from "react";
 import { MainContext } from "../../context/context";
 import GridItem from "../GridItem/GridItem";
 import GridWrapper from "../GridItem/GridWrapper";
+import { RiseLoader } from "react-spinners";
 
 export default function Trending() {
   const context = useContext(MainContext);
 
   const fetchTrending = async () => {
-    const response = await fetch("https://api.giphy.com/v1/gifs/trending?api_key=GwI7qfLYcyv0f8HgMdsx1M1SUthipXW1&limit=50&rating=r");
+    context.setLoading(true);
+    const response = await fetch(
+      "https://api.giphy.com/v1/gifs/trending?api_key=GwI7qfLYcyv0f8HgMdsx1M1SUthipXW1&limit=50&rating=r"
+    );
     const data = await response.json();
     console.log(data);
     context.setDataTrending(data.data);
@@ -16,8 +20,15 @@ export default function Trending() {
 
   useEffect(() => {
     fetchTrending();
+    setTimeout(() => context.setLoading(false), 1000);
   }, []);
 
+  if (context.loading)
+    return (
+      <GridWrapper loadingWrapper='loadingWrapper'>
+        <RiseLoader color={"#f3617a"} />
+      </GridWrapper>
+    );
   return (
     <GridWrapper>
       {context.dataTrending.map((x) => {

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { MainContext } from '../../context/context'
 import { ImCross } from "react-icons/im";
 
-function GridItem({ url, className, img, alt, id, item }) {
+function GridItemFav({ url, className, img, alt, id, item }) {
 
   const context = useContext(MainContext)
 
@@ -20,5 +20,5 @@ function GridItem({ url, className, img, alt, id, item }) {
   );
 }
 
-export default GridItem;
+export default GridItemFav;
 

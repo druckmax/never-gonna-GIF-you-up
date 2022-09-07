@@ -1,20 +1,31 @@
-import React, { useContext } from 'react'
-import { MainContext } from '../../context/context'
 import { BsFillSuitHeartFill } from "react-icons/bs";
+import { useContext, useState } from "react";
+import { MainContext } from "../../context/context";
 
-function GridItem({ url, className, img, alt, id, item }) {
+function GridItem({ item, url, className, img, alt, id }) {
+  const context = useContext(MainContext);
 
-  const context = useContext(MainContext)
+  // Loading state for an image
+  const [imgIsLoaded, setImgIsLoaded] = useState(false);
+
+  console.log(item);
+  const itemHeight = item.images.original.height;
+  const itemWidth = item.images.original.width;
 
   return (
     <div className={className} key={id}>
-      <a href={url} target='_blank' rel='noreferrer'>
-        <img src={img} alt={alt} id={id} />
+      <a href={url} target="_blank" rel="noreferrer">
+        {/* <LazyLoadImage alt={alt} height={itemHeight} width={itemWidth} src={img} /> */}
+        <img onLoad={() => setImgIsLoaded(true)} src={img} alt={alt} id={id} />
       </a>
-      <BsFillSuitHeartFill className="heartIcon" onClick={() => context.setDataFavorites((x) => ([...x, item]))}/>
+      {imgIsLoaded && (
+        <BsFillSuitHeartFill
+          className="heartIcon heartIconAnimation"
+          onClick={() => context.setDataFavorites((x) => [...x, item])}
+        />
+      )}
     </div>
   );
 }
 
 export default GridItem;
-

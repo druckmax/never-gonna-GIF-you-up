@@ -15,50 +15,43 @@ function Navbar() {
   const showToggleHandler = () => {
     showToggle ? setShowToggle(false) : setShowToggle(true);
   };
-  
+
   return (
-    <div className='navbarContainer'>
-      <div
-        className={`navLinkContainer ${showToggle && 'transformNavLinks'}`}
-      >
+    <div className="navbarContainer">
+      <div className={`navLinkContainer ${showToggle && "transformNavLinks"}`}>
         <NavbarBtn
+          randomFetchBtn={false}
           text="MyFavorites"
           link="/"
-          className='navLink'
+          className="navLink"
           route={"/favorites"}
         />
         <NavbarBtn
+          randomFetchBtn={false}
           text="Trending"
           link="/"
-          className='navLink'
+          className="navLink"
           route={"/trending"}
         />
         <NavbarBtn
+          randomFetchBtn={true}
           text="Random"
           link="/"
-          className='navLink randomBtn'
+          className="navLink randomBtn"
           route={"/random"}
         />
-        <button
-          onClick={showToggleHandler}
-          className='arrow arrowRight'
-        >
+        <button onClick={showToggleHandler} className="arrow arrowRight">
           <BsArrowRightCircle />
         </button>
       </div>
 
       <div
-        className={`toggleContainer ${
-          showToggle ? 'transformToggle' : null
-        }`}
+        className={`toggleContainer ${showToggle ? "transformToggle" : null}`}
       >
-        <button
-          onClick={showToggleHandler}
-          className='arrow arrowLeft'
-        >
+        <button onClick={showToggleHandler} className="arrow arrowLeft">
           <BsArrowLeftCircle />
         </button>
-        <div className='toggle'>
+        <div className="toggle">
           Dark
           <div className="switch">
             {
