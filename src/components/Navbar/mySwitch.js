@@ -3,7 +3,6 @@ import Switch from "react-switch";
 import moon from "./img/moon-solid.svg";
 
 export default function MySwitch(props) {
-console.log(props)
   return (
     <Switch
       checked={props.checked}
