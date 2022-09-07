@@ -41,6 +41,7 @@ export default function SearchResults() {
             alt={x.slug}
             id={x.id}
             key={x.id}
+            item={x}
           />
         );
       })}

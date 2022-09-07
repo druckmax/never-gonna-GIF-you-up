@@ -34,13 +34,13 @@ export default function Trending() {
       {context.dataTrending.map((x) => {
         return (
           <GridItem
-          item={x}
             url={x.url}
             key={x.id}
             className={"grid-item"}
             img={x.images.downsized_large.url}
             alt={x.slug}
             id={x.id}
+            item={x}
           />
         );
       })}

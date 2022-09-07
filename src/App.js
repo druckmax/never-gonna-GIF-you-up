@@ -25,7 +25,7 @@ function App() {
               <Route path="/" element={<SearchResults />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/trending" element={<Trending />} />
-            <Route path="/random" element={<Random />} />
+              <Route path="/random" element={<Random />} />
           </Routes>
         </div>
       </div>

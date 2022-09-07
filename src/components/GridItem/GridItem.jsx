@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from 'react'
+import { MainContext } from '../../context/context'
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { MainContext } from "../../context/context";
@@ -33,3 +34,4 @@ function GridItem({ item, url, className, img, alt, id }) {
 }
 
 export default GridItem;
+
