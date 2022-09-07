@@ -1,9 +1,6 @@
-import React, { useContext } from 'react'
-import { MainContext } from '../../context/context'
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { MainContext } from "../../context/context";
-import LazyLoad from "react-lazy-load";
 
 function GridItem({ item, url, className, img, alt, id }) {
   const context = useContext(MainContext);
@@ -24,8 +21,6 @@ function GridItem({ item, url, className, img, alt, id }) {
           src={img}
           alt={alt}
           id={id}
-          width={itemWidth}
-          height={itemHeight}
         />
       </a>
       {imgIsLoaded && <BsFillSuitHeartFill className="heartIcon heartIconAnimation" />}
