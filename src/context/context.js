@@ -6,7 +6,7 @@ export default function ContextProvider(props) {
   // const API_KEY_1 = process.env.REACT_APP_API_KEY_JUDE;
   // const API_KEY_2 = process.env.REACT_APP_API_KEY_MAX;
   const API_KEY_1 = "GwI7qfLYcyv0f8HgMdsx1M1SUthipXW1";
-  const API_KEY_2 = "00H6atmqorBQUpmQ8RjPERJzDuof4Hi";
+  const API_KEY_2 = "O00H6atmqorBQUpmQ8RjPERJzDuof4Hi";
   //? State Variable for Switch Toggle
   const [theme, setTheme] = useState("dark");
   //? Theme Toggle Function
@@ -47,6 +47,7 @@ export default function ContextProvider(props) {
     <MainContext.Provider
       value={{
         API_KEY_1,
+        API_KEY_2,
         theme,
         setTheme,
         toggleTheme,
