@@ -1,10 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { MainContext } from "./context/context";
 import 'react-notifications/lib/notifications.css';
-
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import "./App.scss";
 import NotFound from "./components/NotFound/NotFound";
 import Favorites from "./components/Favorites/Favorites";
@@ -15,6 +13,8 @@ import Searchbar from "./components/Searchbar/Searchbar";
 import MemeGenerator from './components/memeGenerator/MemeGenerator';
 import ErrorModal from "./components/ErrorModal/ErrorModal";
 import TopButton from "./components/TopButton/TopButton";
+
+
 
 function App() {
   const context = useContext(MainContext);

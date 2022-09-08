@@ -10,6 +10,7 @@ function GridItem({ item, url, className, img, alt, id }) {
   const [imgIsLoaded, setImgIsLoaded] = useState(false);
   const [icon, setIcon] = useState(true);
 
+
   const createNotification = (name) => {
         NotificationManager.success( 'has been added to Favorites', `${name}`)
   };
