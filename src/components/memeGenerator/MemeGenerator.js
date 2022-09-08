@@ -22,7 +22,7 @@ export default function MemeGenerator() {
 
     useEffect(() => {
         context.fetchRandom();
-      }, []);
+      }, [meme]);
 
     // creating function to update the objects property "randomImag" which is hold into state "meme". We get a random image everytime this function gets called. The function ges called, when the button gets clicked.
     function getMemeImage() {
@@ -33,6 +33,7 @@ export default function MemeGenerator() {
             ...prevMeme,
             randomImage: url
         }))
+        
     }
 
 
