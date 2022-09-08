@@ -6,8 +6,9 @@ function GridItemFav({ url, className, img, alt, id, item }) {
 
   const context = useContext(MainContext)
 
-  const removeItem = (item) => {
+  const removeItem = () => {
     context.setDataFavorites(context.dataFavorites.filter(item => item.id !== id))
+    localStorage.setItem("Favorites", JSON.stringify(context.dataFavorites.filter(item => item.id !== id)));
   }
 
   return (

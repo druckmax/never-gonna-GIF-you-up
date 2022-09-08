@@ -13,6 +13,7 @@ function GridItem({ item, url, className, img, alt, id }) {
     context.setDataFavorites((x) => {
       if ([...x].some((x) => x.id === id)) return x;
       setIcon(false);
+      localStorage.setItem("Favorites", JSON.stringify([...x, item]));
       return [...x, item];
     });
   };
