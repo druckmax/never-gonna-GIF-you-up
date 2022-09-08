@@ -24,7 +24,7 @@ function NavbarBtn({ randomFetchBtn, trendingFetchBtn, text, link, className, ro
         onClick={fetchBtnHandler}
         to={route}
         className={
-          className === "navLink" && context.theme === "light"
+          className.includes("btn-bg-transparent") && context.theme === "light"
             ? `${className} navLink-light`
             : className
         }

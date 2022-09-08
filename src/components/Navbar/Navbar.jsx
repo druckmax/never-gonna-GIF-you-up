@@ -21,21 +21,18 @@ function Navbar() {
       <div className={`navLinkContainer ${showToggle && "transformNavLinks"}`}>
         <NavbarBtn
           text="MyFavorites"
-          link="/"
-          className="navLink"
+          className="navLink btn-bg-transparent"
           route={"/favorites"}
         />
         <NavbarBtn
           trendingFetchBtn={true}
           text="Trending"
-          link="/"
-          className="navLink"
+          className="navLink btn-bg-transparent"
           route={"/trending"}
         />
         <NavbarBtn
           randomFetchBtn={true}
           text="Random"
-          link="/"
           className="navLink randomBtn"
           route={"/random"}
         />
@@ -52,8 +49,7 @@ function Navbar() {
         </button>
         <NavbarBtn
           text="MemeGenerator"
-          link="/"
-          className="navLink"
+          className="navLink memeGeneratorBtn btn-bg-transparent"
           route={"/memeGenerator"}
         />
         <div className="toggle">

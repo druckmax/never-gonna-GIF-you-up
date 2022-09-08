@@ -44,7 +44,6 @@ export default function ContextProvider(props) {
       throw new Error("Sorry, something went wrong fetching your data.");
     }
   };
-
   // Fetch request for search input
   const fetchSearch = async () => {
     try {
@@ -53,9 +52,7 @@ export default function ContextProvider(props) {
       const response = await fetch(
         `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY_1}&q=${input}&limit=50&offset=0&rating=r&lang=en`
       );
-
       errorHandler(response);
-
       const data = await response.json();
       setDataSearch(data.data);
     } catch (error) {
