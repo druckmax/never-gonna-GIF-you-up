@@ -5,13 +5,13 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { MainContext } from "../../context/context";
 
-function NavbarBtn({ randomFetchBtn, text, link, className, route }) {
+function NavbarBtn({ randomFetchBtn, trendingFetchBtn, text, link, className, route }) {
   const context = useContext(MainContext);
 
-  const randomFetchBtnHandler = () => {
-    if (randomFetchBtn) {
-      context.fetchRandom();
-    }
+  const fetchBtnHandler = () => {
+    if(randomFetchBtn) context.fetchRandom()
+    if(trendingFetchBtn) context.fetchTrending()
+    return;
   };
 
   return (
@@ -21,7 +21,7 @@ function NavbarBtn({ randomFetchBtn, text, link, className, route }) {
       }`}
     >
       <NavLink
-        onClick={randomFetchBtnHandler}
+        onClick={fetchBtnHandler}
         to={route}
         className={
           className === "navLink" && context.theme === "light"

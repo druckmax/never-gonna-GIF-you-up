@@ -1,33 +1,35 @@
-import React, { useContext } from 'react';
-import { MainContext } from './context/context'
+import React, { useContext } from "react";
+import { MainContext } from "./context/context";
 
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import './App.scss';
-import NotFound from './components/NotFound/NotFound';
-import Favorites from './components/Favorites/Favorites';
-import Random from './components/Random/Random';
-import SearchResults from './components/SearchResults/SearchResults';
-import Trending from './components/Trending/Trending';
+import "./App.scss";
+import NotFound from "./components/NotFound/NotFound";
+import Favorites from "./components/Favorites/Favorites";
+import Random from "./components/Random/Random";
+import SearchResults from "./components/SearchResults/SearchResults";
+import Trending from "./components/Trending/Trending";
 import Searchbar from "./components/Searchbar/Searchbar";
+import ErrorModal from "./components/ErrorModal/ErrorModal";
 
 function App() {
-  const context = useContext(MainContext)
+  const context = useContext(MainContext);
 
   return (
     // When deploying use HashRouter!
     <BrowserRouter>
-    <div className='wrapper' id={context.theme}>
+      <div className="wrapper" id={context.theme}>
+        {context.error ? <ErrorModal /> : null} 
         <Searchbar />
         <Navbar />
         <div className="content-container">
           <Routes>
-              <Route path="/" element={<SearchResults />} />
-              <Route path="/favorites" element={<Favorites />} />
-              <Route path="/trending" element={<Trending />} />
-              <Route path="/random" element={<Random />} />
-              <Route path="*" element={<NotFound/>} />
+            <Route path="/" element={<SearchResults />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/trending" element={<Trending />} />
+            <Route path="/random" element={<Random />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </div>
       </div>
