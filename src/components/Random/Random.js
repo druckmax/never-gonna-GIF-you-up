@@ -3,7 +3,6 @@ import { MainContext } from "../../context/context";
 import "./random.scss";
 import GridItem from "../GridItem/GridItem";
 import { RiseLoader } from "react-spinners";
-import MemeGenerator from "../MemeGenerator/MemeGenerator";
 
 export default function Random() {
   const context = useContext(MainContext);
