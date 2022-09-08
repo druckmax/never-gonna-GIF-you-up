@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { MainContext } from "./context/context";
 
 import Navbar from "./components/Navbar/Navbar";
@@ -12,9 +12,22 @@ import SearchResults from "./components/SearchResults/SearchResults";
 import Trending from "./components/Trending/Trending";
 import Searchbar from "./components/Searchbar/Searchbar";
 import ErrorModal from "./components/ErrorModal/ErrorModal";
+import TopButton from "./components/TopButton/TopButton";
 
 function App() {
   const context = useContext(MainContext);
+  const [showButton, setShowButton]=useState(false)
+
+       useEffect(()=>{
+           const buttonVisibility =()=>{
+               window.pageYOffset> 500 ? setShowButton(true) : setShowButton(false);
+           }
+           window.addEventListener("scroll", buttonVisibility);
+
+           return () =>{
+              window.removeEventListener("scroll", buttonVisibility);
+           }
+      })
 
   return (
     // When deploying use HashRouter!
@@ -24,6 +37,8 @@ function App() {
         <Searchbar />
         <Navbar />
         <div className="content-container">
+          {showButton && <TopButton/>}
+          
           <Routes>
             <Route path="/" element={<SearchResults />} />
             <Route path="/favorites" element={<Favorites />} />
