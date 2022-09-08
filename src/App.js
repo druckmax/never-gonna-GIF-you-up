@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { MainContext } from "./context/context";
+import 'react-notifications/lib/notifications.css';
 
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,6 +13,7 @@ import SearchResults from "./components/SearchResults/SearchResults";
 import Trending from "./components/Trending/Trending";
 import Searchbar from "./components/Searchbar/Searchbar";
 import ErrorModal from "./components/ErrorModal/ErrorModal";
+
 
 function App() {
   const context = useContext(MainContext);
