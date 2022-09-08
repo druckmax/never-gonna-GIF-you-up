@@ -1,10 +1,10 @@
 .meme-container {
-  min-height: 50vh;
+  min-height: 40vh;
   display: flex;
   width: 100%;
-  max-width: 100rem;
+  max-width: 75rem;
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 4rem 2rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -78,6 +78,7 @@
     width: 55rem;
     max-width: 55rem;
     padding: 5rem;
+    margin-bottom: 4rem;
     background-color: rgba(0, 0, 0, 0.303);
     border-radius: 15px;
 
