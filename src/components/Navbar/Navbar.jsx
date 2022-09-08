@@ -6,6 +6,7 @@ import { MainContext } from "../../context/context";
 
 import "./Navbar.scss";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
+import Meme from "../memeGenerator/Meme"
 
 function Navbar() {
   const [showToggle, setShowToggle] = useState(false);
@@ -51,6 +52,7 @@ function Navbar() {
         <button onClick={showToggleHandler} className="arrow arrowLeft">
           <BsArrowLeftCircle />
         </button>
+        <Meme/>
         <div className="toggle">
           Dark
           <div className="switch">
