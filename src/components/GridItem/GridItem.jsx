@@ -31,13 +31,18 @@ function GridItem({ item, url, className, img, alt, id }) {
     }
   };
 
+  const modalToggle = () => {
+    context.setShowModal(true)
+    context.setIdTransfer(id)
+  }
+
   useEffect(() => {
     checkForItems();
   }, []);
 
   return (
     <div className={className} key={id}>
-      <div className="grid-item-container" onClick={() => context.setShowModal(true)}>
+      <div className="grid-item-container" onClick={modalToggle}>
         <img onLoad={() => setImgIsLoaded(true)} src={img} alt={alt} id={id} />
         <NotificationContainer/>
       </div>
