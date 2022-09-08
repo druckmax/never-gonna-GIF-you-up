@@ -1,0 +1,41 @@
+.errorModalContainer {
+  width: 100%;
+  max-width: 50rem;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(87, 15, 15, .95);
+  z-index: 10;
+  font-size: 1.2rem;
+  padding: 2rem;
+  color: rgb(248, 127, 127);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  animation: errorFadeIn 5s forwards;
+
+  p {
+    padding: 1rem 0;
+    font-size: 1.4rem;
+  }
+
+  @keyframes errorFadeIn {
+    0% {
+      top: -50rem;
+      opacity: 0;
+    }
+    30% {
+      top: 0;
+      opacity: 1;
+    }
+    70% {
+      top: 0;
+      opacity: 1;
+    }
+    100% {
+      top: -50rem;
+      opacity: 0;
+    }
+  }
+}

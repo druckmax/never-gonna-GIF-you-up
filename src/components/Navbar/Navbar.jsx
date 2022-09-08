@@ -20,14 +20,13 @@ function Navbar() {
     <div className="navbarContainer">
       <div className={`navLinkContainer ${showToggle && "transformNavLinks"}`}>
         <NavbarBtn
-          randomFetchBtn={false}
           text="MyFavorites"
           link="/"
           className="navLink"
           route={"/favorites"}
         />
         <NavbarBtn
-          randomFetchBtn={false}
+          trendingFetchBtn={true}
           text="Trending"
           link="/"
           className="navLink"

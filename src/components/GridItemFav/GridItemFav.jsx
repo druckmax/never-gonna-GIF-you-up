@@ -6,8 +6,9 @@ function GridItemFav({ url, className, img, alt, id, item }) {
 
   const context = useContext(MainContext)
 
-  const removeItem = (item) => {
+  const removeItem = () => {
     context.setDataFavorites(context.dataFavorites.filter(item => item.id !== id))
+    localStorage.setItem("Favorites", JSON.stringify(context.dataFavorites.filter(item => item.id !== id)));
   }
 
   return (
@@ -15,7 +16,7 @@ function GridItemFav({ url, className, img, alt, id, item }) {
       <a href={url} target='_blank' rel='noreferrer'>
         <img src={img} alt={alt} id={id} />
       </a>
-      <ImCross className="heartIcon" onClick={() => removeItem()}/>
+      <ImCross className="heartIcon xIcon" onClick={() => removeItem()}/>
     </div>
   );
 }
