@@ -10,7 +10,7 @@ import Random from "./components/Random/Random";
 import SearchResults from "./components/SearchResults/SearchResults";
 import Trending from "./components/Trending/Trending";
 import Searchbar from "./components/Searchbar/Searchbar";
-import MemeGenerator from './components/MemeGenerator/MemeGenerator';
+import MemeGenerator from './components/memeGenerator/MemeGenerator';
 import ErrorModal from "./components/ErrorModal/ErrorModal";
 import TopButton from "./components/TopButton/TopButton";
 

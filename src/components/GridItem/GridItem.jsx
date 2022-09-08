@@ -10,15 +10,7 @@ function GridItem({ item, url, className, img, alt, id }) {
   const [imgIsLoaded, setImgIsLoaded] = useState(false);
   const [icon, setIcon] = useState(true);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  const addToFavorites = () => {
-    context.setDataFavorites((x) => [...x, item])
-    setIcon(false)
-  }
-=======
-=======
->>>>>>> c2ace155502cc22dab1e7541fd17bafd883c633f
+
   const createNotification = (name) => {
         NotificationManager.success( 'has been added to Favorites', `${name}`)
   };
@@ -42,10 +34,6 @@ function GridItem({ item, url, className, img, alt, id }) {
   useEffect(() => {
     checkForItems();
   }, []);
-<<<<<<< HEAD
->>>>>>> da4eee2a6ae42730f254302d3af9a9c6f0bb77d7
-=======
->>>>>>> c2ace155502cc22dab1e7541fd17bafd883c633f
 
   return (
     <div className={className} key={id}>
