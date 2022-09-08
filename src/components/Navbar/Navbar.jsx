@@ -50,6 +50,12 @@ function Navbar() {
         <button onClick={showToggleHandler} className="arrow arrowLeft">
           <BsArrowLeftCircle />
         </button>
+        <NavbarBtn
+          text="MemeGenerator"
+          link="/"
+          className="navLink"
+          route={"/memeGenerator"}
+        />
         <div className="toggle">
           Dark
           <div className="switch">
