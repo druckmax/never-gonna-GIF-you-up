@@ -13,6 +13,7 @@ function GridItem({ item, url, className, img, alt, id }) {
     context.setDataFavorites((x) => [...x, item]);
     setIcon(false);
   };
+  
   return (
     <div className={className} key={id}>
       <a href={url} target="_blank" rel="noreferrer">
