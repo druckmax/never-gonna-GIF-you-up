@@ -27,6 +27,8 @@ export default function ContextProvider(props) {
   const [error, setError] = useState(false);
   // Error message
   const [errorMsg, setErrorMsg] = useState("Sorry, something went wrong");
+  // Show Modal State
+  const [showModal, setShowModal] = useState(false)
 
   // Error handling function
   const errorHandler = (response) => {
@@ -112,6 +114,8 @@ export default function ContextProvider(props) {
         dataSearch,
         setDataSearch,
         setDataTrending,
+        showModal,
+        setShowModal,
         dataTrending,
         dataRandom,
         setDataRandom,

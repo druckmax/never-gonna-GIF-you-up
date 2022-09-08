@@ -10,6 +10,7 @@ function GridItem({ item, url, className, img, alt, id }) {
   const [imgIsLoaded, setImgIsLoaded] = useState(false);
   const [icon, setIcon] = useState(true);
 
+
   const createNotification = (name) => {
         NotificationManager.success( 'has been added to Favorites', `${name}`)
   };
@@ -36,10 +37,10 @@ function GridItem({ item, url, className, img, alt, id }) {
 
   return (
     <div className={className} key={id}>
-      <a href={url} target="_blank" rel="noreferrer">
+      <div className="grid-item-container" onClick={() => context.setShowModal(true)}>
         <img onLoad={() => setImgIsLoaded(true)} src={img} alt={alt} id={id} />
         <NotificationContainer/>
-      </a>
+      </div>
       {imgIsLoaded ? (
         icon ? (
           <div>

@@ -10,8 +10,9 @@ export default function Favorites() {
   const context = useContext(MainContext);
 
   useEffect(() => {
+      if(localStorage.getItem("Favorites")){
       context.setDataFavorites(JSON.parse(localStorage.getItem("Favorites")));
-  }, []);
+  }}, []);
 
   if (context.dataFavorites.length === 0)
     return (

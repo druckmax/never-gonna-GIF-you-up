@@ -39,6 +39,7 @@ export default function MemeGenerator() {
     });
   }
   // we return JSX code. The Input values are given by targeting our state object "meme" --> meme.topText will give us the value, which the user typed in and show it in a div which we position on top of the img.
+
   return (
     <div className="meme-container">
       <div className="form">
