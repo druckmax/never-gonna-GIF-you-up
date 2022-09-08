@@ -1,5 +1,5 @@
 import { BsFillSuitHeartFill } from "react-icons/bs";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { MainContext } from "../../context/context";
 
 function GridItem({ item, url, className, img, alt, id }) {
@@ -10,10 +10,23 @@ function GridItem({ item, url, className, img, alt, id }) {
   const [icon, setIcon] = useState(true);
 
   const addToFavorites = () => {
-    context.setDataFavorites((x) => [...x, item]);
-    setIcon(false);
+    context.setDataFavorites((x) => {
+      if ([...x].some((x) => x.id === id)) return x;
+      setIcon(false);
+      return [...x, item];
+    });
   };
-  
+
+  const checkForItems = () => {
+    if (context.dataFavorites.some((favItem) => favItem.id === id)) {
+      setIcon(false);
+    }
+  };
+
+  useEffect(() => {
+    checkForItems();
+  }, []);
+
   return (
     <div className={className} key={id}>
       <a href={url} target="_blank" rel="noreferrer">
