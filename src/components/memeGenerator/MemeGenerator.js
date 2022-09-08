@@ -3,8 +3,10 @@ import { MainContext } from '../../context/context';
 import { useContext } from 'react';
 import { useEffect } from 'react';
 
+import './MemeGenerator.scss'
 
-export default function Meme() {
+
+export default function MemeGenerator() {
 
     const context = useContext(MainContext);
 
@@ -13,19 +15,19 @@ export default function Meme() {
         {
             topText: "",
             bottomText: "",
+            // todo Placeholder image or container
             randomImage: ""
         }
     )
 
     useEffect(() => {
         context.fetchRandom();
-      }, [meme]);
+      }, []);
 
     // creating function to update the objects property "randomImag" which is hold into state "meme". We get a random image everytime this function gets called. The function ges called, when the button gets clicked.
     function getMemeImage() {
-        const memesArray = context.dataRandom.images.original
+        const memesArray = context.dataRandom?.images.original
         console.log(memesArray);
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
         const url = memesArray.url
         setMeme(prevMeme => ({
             ...prevMeme,

@@ -1,12 +1,4 @@
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-:root {
-  margin: 0;
-  font-family: 'Karla', sans-serif;
-}
+.meme-container {
 
 .nav-container {
   display: flex;
@@ -216,3 +208,4 @@ button {
   }
 }
 
+}

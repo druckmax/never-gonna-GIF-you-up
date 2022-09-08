@@ -9,10 +9,6 @@ function GridItem({ item, url, className, img, alt, id }) {
   const [imgIsLoaded, setImgIsLoaded] = useState(false);
   const [icon, setIcon] = useState(true)
 
-  console.log(item);
-  const itemHeight = item.images.original.height;
-  const itemWidth = item.images.original.width;
-
   const addToFavorites = () => {
     context.setDataFavorites((x) => [...x, item])
     setIcon(false)

@@ -11,6 +11,7 @@ import Random from './components/Random/Random';
 import SearchResults from './components/SearchResults/SearchResults';
 import Trending from './components/Trending/Trending';
 import Searchbar from "./components/Searchbar/Searchbar";
+import MemeGenerator from './components/MemeGenerator/MemeGenerator';
 
 function App() {
   const context = useContext(MainContext)
@@ -27,6 +28,7 @@ function App() {
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/trending" element={<Trending />} />
               <Route path="/random" element={<Random />} />
+              <Route path='/memeGenerator' element={<MemeGenerator />} />
               <Route path="*" element={<NotFound/>} />
           </Routes>
         </div>
