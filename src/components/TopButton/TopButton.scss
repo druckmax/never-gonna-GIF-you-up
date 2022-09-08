@@ -1,16 +1,25 @@
-.Top{ 
+.scroll-to-top{ 
     position: fixed;
-    width: 15rem;
-    height: 5rem;
-    padding: 1rem 2rem;
-    font-size: 2rem;
-    bottom: 40px;
-    right: 10px;
+    // width: 6rem;
+    // height: 6rem;
+    padding: 1rem;
+    bottom: 5rem;
+    right: 1rem;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     background: linear-gradient(270deg, #FD6569 0%, #D354B4 47.75%, #AC44FB 95.98%);
-    text-align: center;
-    border-radius: 15px;
+    border-radius: 50%;
     border: none;
     z-index: 1;
+    transition: all 1s;
+    opacity: .9;
+}
+@media only screen and (max-width : 450px) {
+    .scroll-to-top {
+        left: 50vw;
+    }
 }
 
