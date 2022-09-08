@@ -1,15 +1,17 @@
-import React, { useContext } from 'react'
-import { MainContext } from '../../context/context';
-import './favorites.scss'
+import React, { useContext, useEffect } from "react";
+import { MainContext } from "../../context/context";
+import "./favorites.scss";
 
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import GridItemFav from "../GridItemFav/GridItemFav";
 import GridWrapper from "../GridItem/GridWrapper";
 
-
 export default function Favorites() {
+  const context = useContext(MainContext);
 
-  const context = useContext(MainContext)
+  useEffect(() => {
+      context.setDataFavorites(JSON.parse(localStorage.getItem("Favorites")));
+  }, []);
 
   if (context.dataFavorites.length === 0)
     return (

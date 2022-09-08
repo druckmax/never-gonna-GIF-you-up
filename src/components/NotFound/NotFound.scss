@@ -1,49 +1,71 @@
 .page_404 {
-    padding: 40px 0;
-    background: #fff;
-    font-family: 'Arvo', serif;
-    position: absolute;
-    width: 100%;
+    background: #2b2b2b;
+    position: relative;
+    width: 90%;
     max-width: 100rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+    min-height: 60rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px #222;
+    overflow: hidden;
 
-.page_404 img {
-    width: 100%;
-}
-
-
-.four_zero_four_bg {
-    background: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif) no-repeat center center/contain;
-    height: 50rem;
-    background-position: center;
-}
-
-.four_zero_four_bg {
-
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif)no-repeat center bottom/cover;
+        filter: invert(1);
+        // background: url(./img/ezgif-2-4386fee62c.gif) no-repeat center bottom/cover;
+        opacity: .45;
+        z-index: 0;
+    }
     h1 {
-        font-size: 80px;
+        font-size: clamp(7rem, 10vw, 10rem);
+        z-index: 1;
     }
-    h3 {
-        font-size: 80px;
+    .description_404 {
+        padding: 0 0 1rem 0;
+        margin-top: 2rem;
+        width: 100%;
+        font-size: clamp(1rem, 4vw, 2rem);
+        z-index: 1;
+
+        h3 {
+            margin-bottom: .5rem;
+        }
+    }
+
+    .link_404 {
+        display: inline-block;
+        margin-top: 2rem;
+        text-decoration: none;
+        padding: 1rem;
+        background: #b447ed;
+        color: #fff;
+        border-radius: 15px;
+        &:hover {
+            background: darken($color: #b447ed, $amount: 5);
+            transform: translateY(-1px);
+        }
+        &:active {
+            background: darken($color: #b447ed, $amount: 10);
+            transform: translateY(1px);
+        }
     }
 }
 
-.link_404 {
-    color: #fff !important;
-    padding: 10px 20px;
-    background: #39ac31;
-    margin: 20px 0;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    margin-left: 2rem;
+.page_404--light {
+    box-shadow: 0 2px 10px #999;
 
-}
-
-.contant_box_404 {
-    margin-top: -50px;
+    &::before {
+        filter: invert(0);
+        opacity: 1;
+    }
 }
