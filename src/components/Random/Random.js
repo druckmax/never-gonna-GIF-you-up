@@ -26,6 +26,7 @@ export default function Random() {
         alt={context.dataRandom?.slug}
         id={context.dataRandom?.id}
         key={context.dataRandom?.id}
+        from="random"
       />
     </>
   );

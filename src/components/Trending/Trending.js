@@ -31,6 +31,7 @@ export default function Trending() {
             alt={x.slug}
             id={x.id}
             item={x}
+            from="trending"
           />
         );
       })}

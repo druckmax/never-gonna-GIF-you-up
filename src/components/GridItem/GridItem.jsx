@@ -3,7 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import { MainContext } from "../../context/context";
 
-function GridItem({ item, url, className, img, alt, id }) {
+function GridItem({ item, url, className, img, alt, id, from }) {
   const context = useContext(MainContext);
 
   // Loading state for an image
@@ -34,6 +34,7 @@ function GridItem({ item, url, className, img, alt, id }) {
   const modalToggle = () => {
     context.setShowModal(true)
     context.setIdTransfer(id)
+    context.setFrom(from)
   }
 
   useEffect(() => {
