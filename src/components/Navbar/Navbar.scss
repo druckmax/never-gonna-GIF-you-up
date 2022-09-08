@@ -33,9 +33,12 @@
   .toggleContainer {
     width: 80vw;
     max-width: 100rem;
+    display: flex;
+    align-items: center;
+    // justify-content: space-around;
     position: absolute;
     opacity: 0;
-    top: 50%;
+    // top: 50%;
     // top: 50%;
     transform: translate(100vw, -50%);
     transition: all .5s;

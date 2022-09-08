@@ -2,8 +2,8 @@ import React, { useEffect, useContext } from "react";
 import { MainContext } from "../../context/context";
 import "./random.scss";
 import GridItem from "../GridItem/GridItem";
-import GridWrapper from "../GridItem/GridWrapper";
 import { RiseLoader } from "react-spinners";
+import MemeGenerator from "../MemeGenerator/MemeGenerator";
 
 export default function Random() {
   const context = useContext(MainContext);
