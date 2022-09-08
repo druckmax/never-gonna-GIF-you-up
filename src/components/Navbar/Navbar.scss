@@ -1,6 +1,5 @@
 .navbarContainer {
-  margin: 2rem auto;
-  padding: 1rem 0;
+  margin: 3rem auto;
   font-size: 2rem;
   width: 80vw;
   max-width: 100rem;
@@ -8,15 +7,16 @@
 
   .navLinkContainer {
     width: 100%;
+    position: relative;
+    top: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    // top: 50%;
-    // transform: translateY(-50%);
     transition: all .5s;
     opacity: 1;
+
   }
 
   @media only screen and (max-width: 490px) {
@@ -31,21 +31,17 @@
   }
 
   .toggleContainer {
-    width: 80vw;
-    max-width: 100rem;
-    display: flex;
-    align-items: center;
-    // justify-content: space-around;
     position: absolute;
-    opacity: 0;
-    // top: 50%;
-    // top: 50%;
-    transform: translate(100vw, -50%);
+    top: 0;
+    gap: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    transform: translateX(100vw);
     transition: all .5s;
 
     .toggle {
       width: 25rem;
-      margin: auto;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -54,7 +50,7 @@
 
   .transformToggle {
     opacity: 1;
-    transform: translate(0vw, -50%);
+    transform: translateX(0);
   }
 
   .arrow {
@@ -124,7 +120,12 @@
       height: 5rem;
       background-color: transparent;
     }
+
+    .memeGeneratorBtn {
+      font-size: 1.6rem;
+    }
   }
+
   .borderWrapper-light {
     box-shadow: 0 2px 10px #aaa;
   }
