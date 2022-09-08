@@ -15,8 +15,19 @@ export default function Modal({show, onClose}) {
     const [item, setItem] = useState()
 
     useEffect(() => {
-        setItem(...(context.dataTrending.filter(x => x.id === context.idTransfer)))
-        console.log(item);
+        switch (context.from) {
+            case "trending":
+                setItem(...(context.dataTrending.filter(x => x.id === context.idTransfer)))
+                break
+            case "searchResults":
+                setItem(...(context.dataSearch.filter(x => x.id === context.idTransfer)))
+                break
+            case "random":
+                setItem(context.dataRandom)
+                break
+            default:
+                break
+        }
     }, [context.idTransfer])
 
     if (!show) return null
@@ -26,7 +37,7 @@ export default function Modal({show, onClose}) {
         <div className='modal-overlay' onClick={onClose}/>
         <div className='modal-main'>
             <div className='modal-content'>
-                <img src={item?.images.original.url} alt={item?.slug}/>
+                <img src={item?.images?.original.url} alt={item?.slug}/>
                 <div className='modal-info'>
                     <h1>{item?.title}</h1>
                     <a href="#" className='modal-links'><span><i class="fa-solid fa-share-nodes"></i> Share</span></a>

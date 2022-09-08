@@ -31,6 +31,9 @@ export default function ContextProvider(props) {
   const [showModal, setShowModal] = useState(false)
   // ID Transfer from GridItem to Modal
   const [idTransfer, setIdTransfer] = useState("")
+  // Checking from which component the item is from to map through the right one for Modal data
+  const [from, setFrom] = useState("")
+
 
   // Error handling function
   const errorHandler = (response) => {
@@ -121,6 +124,8 @@ export default function ContextProvider(props) {
         setDataTrending,
         idTransfer,
         setIdTransfer,
+        from,
+        setFrom,
         showModal,
         setShowModal,
         dataTrending,
