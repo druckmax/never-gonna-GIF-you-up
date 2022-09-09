@@ -38,12 +38,11 @@ function App() {
     <BrowserRouter>
       <div className="wrapper" id={context.theme}>
         {context.error ? <ErrorModal /> : null}
+        {showButton && <TopButton />}
         <Searchbar />
         <Navbar />
         <Modal show={context.showModal} onClose={() => context.setShowModal(false)}/>
         <div className="content-container">
-          {showButton && <TopButton />}
-
           <Routes>
             <Route path="/" element={<SearchResults />} />
             <Route path="/favorites" element={<Favorites />} />

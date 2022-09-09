@@ -1,24 +1,17 @@
-import React,{useEffect, useState} from 'react'
-import "./TopButton.scss"
+import "./TopButton.scss";
+import {IoIosArrowUp} from 'react-icons/io'
 
 export default function TopButton() {
-
-   
-
-    return(
-        
-      
-
-      <div style={{height: '155rem'}}>
-
-      
-      <button className={'Top'}
+  return (
+    <div>
+      <button
+        className={"scroll-to-top"}
         onClick={() => {
-          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-        }}>
-        Scroll to top
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }}
+      >
+        <IoIosArrowUp />
       </button>
     </div>
-    )    
-    
+  );
 }
