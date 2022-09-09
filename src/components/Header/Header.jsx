@@ -14,11 +14,11 @@ function Footer() {
   };
 
   return (
-    <footer className={styles.headerClass}>
+    <header className={styles.headerClass}>
       <a href="https://giphy.com/" target="_blank" rel="noreferrer">
         <img src={urlSwitch()} alt="giphy banner" loop={true} />
       </a>
-    </footer>
+    </header>
   );
 }
 

@@ -29,6 +29,11 @@ export default function ContextProvider(props) {
   const [errorMsg, setErrorMsg] = useState("Sorry, something went wrong");
   // Show Modal State
   const [showModal, setShowModal] = useState(false)
+  // ID Transfer from GridItem to Modal
+  const [idTransfer, setIdTransfer] = useState("")
+  // Checking from which component the item is from to map through the right one for Modal data
+  const [from, setFrom] = useState("")
+
 
   // Error handling function
   const errorHandler = (response) => {
@@ -114,6 +119,10 @@ export default function ContextProvider(props) {
         dataSearch,
         setDataSearch,
         setDataTrending,
+        idTransfer,
+        setIdTransfer,
+        from,
+        setFrom,
         showModal,
         setShowModal,
         dataTrending,

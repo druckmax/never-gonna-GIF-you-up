@@ -1,3 +1,5 @@
+@import '../../Variables';
+
 .searchbar {
   // height: 10vh;
   background-color: #191919b0;
@@ -78,10 +80,10 @@
 }
 
 .light {
-  background: #efefef;
-  box-shadow: 0 2px 10px #aaa;
+  background: $bg-light-main;
+  box-shadow: $box-shadow-light-a-10;
 
   .searchInput {
-    box-shadow: 0 2px 8px #aaa;
+    box-shadow: $box-shadow-light-a-10;
   }
 }

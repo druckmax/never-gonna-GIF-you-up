@@ -35,6 +35,7 @@ function Searchbar() {
           type="text"
           className={styles.searchInput}
           placeholder="Search for a GIF :)"
+          required
         />
         <div></div>
         <SearchBtn />
