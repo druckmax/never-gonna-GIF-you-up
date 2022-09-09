@@ -15,7 +15,7 @@ import Searchbar from "./components/Searchbar/Searchbar";
 import MemeGenerator from "./components/memeGenerator/MemeGenerator";
 import ErrorModal from "./components/ErrorModal/ErrorModal";
 import TopButton from "./components/TopButton/TopButton";
-
+import Modal from './Modal'
 
 
 function App() {
@@ -40,6 +40,7 @@ function App() {
         {context.error ? <ErrorModal /> : null}
         <Searchbar />
         <Navbar />
+        <Modal show={context.showModal} onClose={() => context.setShowModal(false)}/>
         <div className="content-container">
           {showButton && <TopButton />}
 
