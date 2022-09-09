@@ -1,3 +1,5 @@
+@import '../../Variables.scss';
+
 .navbarContainer {
   margin: 3rem auto;
   font-size: 2rem;
@@ -86,7 +88,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 10px #222;
+    box-shadow: $box-shadow-dark-a-10;
     transition: all .2s;
 
     &:hover {
@@ -104,7 +106,7 @@
       color: #fff;
       font-weight: 500;
       border-radius: 12px;
-      background-color: #2b2b2b;
+      background-color: $bg-dark-main;
       width: 14rem;
       height: 4rem;
       display: flex;
@@ -115,7 +117,7 @@
 
     .navLink-light {
       color: inherit;
-      background-color: #efefef;
+      background-color: $bg-light-main;
     }
 
     .randomBtn {
@@ -130,7 +132,7 @@
   }
 
   .borderWrapper-light {
-    box-shadow: 0 2px 10px #aaa;
+    box-shadow: $box-shadow-light-a-10;
   }
 }
 

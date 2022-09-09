@@ -1,3 +1,5 @@
+@import '../../Variables';
+
 .page_404 {
     background: #2b2b2b;
     position: relative;
@@ -62,7 +64,7 @@
 }
 
 .page_404--light {
-    box-shadow: 0 2px 10px #999;
+    box-shadow: $box-shadow-light-a-10;
 
     &::before {
         filter: invert(0);

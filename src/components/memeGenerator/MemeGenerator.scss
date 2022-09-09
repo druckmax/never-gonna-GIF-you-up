@@ -1,3 +1,5 @@
+@import '../../Variables';
+
 .meme-container {
   min-height: 50vh;
   display: flex;
@@ -9,7 +11,7 @@
   justify-content: flex-start;
   align-items: center;
   border-radius: 15px;
-  box-shadow: 0 0 20px #111;
+  transition: all .5s;
 
   .form {
     display: flex;
@@ -35,7 +37,6 @@
         text-indent: 5px;
         min-width: 25rem;
         max-width: 100rem;
-        box-shadow: 0 2px 5px #444;
         border: 4px solid transparent;
         transition: all .5s;
 
@@ -58,7 +59,7 @@
     border: none;
     font-size: 1.6rem;
     cursor: pointer;
-    box-shadow: 0 1px 5px #444;
+    transition: all .5s;
 
     &:hover {
       background: linear-gradient(90deg, darken(#FD6569, 5) 0%, darken(#D354B4, 5) 47.75%, darken(#AC44FB, 5) 95.98%);
@@ -78,7 +79,6 @@
     width: 55rem;
     max-width: 55rem;
     padding: 5rem;
-    background-color: rgba(0, 0, 0, 0.303);
     border-radius: 15px;
 
     .meme-text {

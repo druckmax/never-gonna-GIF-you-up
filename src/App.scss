@@ -1,3 +1,5 @@
+@import './Variables';
+
 .wrapper {
   text-align: center;
   width: 100vw;
@@ -7,11 +9,11 @@
 }
 
 #light {
-  background-color: #efefef;
+  background-color: $bg-light-main;
 }
 
 #dark {
-  background-color: #2B2B2B;
+  background-color: $bg-dark-main;
 }
 
 .content-container {
@@ -87,8 +89,8 @@
   border-radius: 15px;
   width: 90%;
   max-width: 150rem;
-  background-color: rgba(0, 0, 0, 0.501);
-  box-shadow: 0 5px 10px #111;
+  background-color: $bg-dark-container;
+  box-shadow: $box-shadow-darker-lg;
 
   h1 {
     line-height: 1.5;
@@ -102,8 +104,8 @@
 }
 
 .grid-container-light {
-  background-color: rgba(227, 227, 227, 0.559);
-  box-shadow: 0 0px 10px #bbb
+  background-color: $bg-light-container;
+  box-shadow: $box-shadow-light-b-10;
 }
 
 .loadingWrapper {
@@ -116,6 +118,7 @@
 .grid-item {
   margin: 0 0 1rem 0;
   position: relative;
+  cursor: pointer;
 
   .grid-item-container {
     img {
@@ -143,7 +146,7 @@
 .grid-item-random {
   margin: 10px 0;
   position: relative;
-  filter: drop-shadow(0 5px 10px rgba(34, 34, 34, 0.429));
+  filter: drop-shadow($box-shadow-dark-lg);
 
   a {
     img {
@@ -157,6 +160,7 @@
 .notification {
   box-shadow: none;
   border-radius: 25px;
+  font-size: 1.1rem;
 }
 
 // Responsive Design PHONES

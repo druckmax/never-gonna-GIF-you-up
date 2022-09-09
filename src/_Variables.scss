@@ -1,0 +1,39 @@
+$color-light: #fff;
+$color-dark: #555;
+
+$bg-light-main: #efefef;
+$bg-dark-main: #2b2b2b;
+$bg-light-container: rgba(227, 227, 227, 0.559);
+$bg-dark-container: rgba(0, 0, 0, 0.5);
+
+$box-shadow-light-a-10: 0 2px 10px #aaa;
+$box-shadow-light-b-10: 0 0px 10px #bbb;
+$box-shadow-light-small: 0 1px 4px #999;
+
+$box-shadow-dark-small: 0 1px 4px #222;
+$box-shadow-dark-a-10: 0 2px 10px #222;
+$box-shadow-dark-lg: 0 2px 10px #2222226d;
+$box-shadow-darker-lg: 0 2px 10px #222;
+
+.bg-dark-container {
+  background-color: $bg-dark-container;
+}
+.bg-light-container {
+  background-color: $bg-light-container;
+}
+
+.box-shadow-light-lg {
+  box-shadow: $box-shadow-light-a-10;
+}
+.box-shadow-dark-lg {
+  box-shadow: $box-shadow-darker-lg;
+}
+.box-shadow-light-small {
+  box-shadow: $box-shadow-light-small;
+}
+.box-shadow-dark-small {
+  box-shadow: $box-shadow-dark-small;
+}
+.bg-light-container {
+  background-color: $bg-light-container;
+}

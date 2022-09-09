@@ -41,7 +41,7 @@ export default function MemeGenerator() {
   // we return JSX code. The Input values are given by targeting our state object "meme" --> meme.topText will give us the value, which the user typed in and show it in a div which we position on top of the img.
 
   return (
-    <div className="meme-container">
+    <div className={`meme-container ${context.theme === 'light' ? 'box-shadow-light-lg' : 'box-shadow-dark-lg'}`}>
       <div className="form">
         <div className="meme-input-container">
           <input
@@ -49,7 +49,7 @@ export default function MemeGenerator() {
             name="topText"
             onChange={handleChange}
             type="text"
-            className="input-1"
+            className={context.theme === 'light' ? 'box-shadow-light-small' : 'box-shadow-dark-small'}
             placeholder="Shut up"
           ></input>
           <input
@@ -57,16 +57,16 @@ export default function MemeGenerator() {
             name="bottomText"
             onChange={handleChange}
             type="text"
-            className="input-2"
+            className="input"
             placeholder="and take my money"
           ></input>
         </div>
-        <button onClick={getMemeImage}>
-          Get a new meme image <i className="fa-regular fa-image"></i>
+        <button onClick={getMemeImage} className={context.theme === 'light' ? 'box-shadow-light-small' : 'box-shadow-dark-small'}>
+          Get a new meme <i className="fa-regular fa-image"></i>
         </button>
       </div>
     
-      <div className="meme-image-container">
+      <div className={"meme-image-container" + context.theme === 'light' ? 'bg-light-container' : 'bg-dark-container'}>
         <div className="meme-text text-top">{meme.topText}</div>
         <div className="meme-text text-bottom">{meme.bottomText}</div>
         <div>

@@ -3,7 +3,6 @@ import React, { useState, useContext } from "react";
 import NavbarBtn from "./NavbarBtn";
 import MySwitch from "./mySwitch";
 import { MainContext } from "../../context/context";
-
 import "./Navbar.scss";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
 
