@@ -20,7 +20,7 @@ export default function MemeGenerator() {
   }, [meme]);
   // creating function to update the objects property "randomImag" which is hold into state "meme". We get a random image everytime this function gets called. The function ges called, when the button gets clicked.
   function getMemeImage() {
-    const memesArray = context.dataRandom?.images.original;
+    const memesArray = context.dataRandom?.images?.original;
     console.log("yes");
     const url = memesArray.url;
     setMeme((prevMeme) => ({
