@@ -57,7 +57,7 @@ export default function MemeGenerator() {
             name="bottomText"
             onChange={handleChange}
             type="text"
-            className="input"
+            className={context.theme === 'light' ? 'box-shadow-light-small' : 'box-shadow-dark-small'}
             placeholder="and take my money"
           ></input>
         </div>
@@ -66,7 +66,7 @@ export default function MemeGenerator() {
         </button>
       </div>
     
-      <div className={"meme-image-container" + context.theme === 'light' ? 'bg-light-container' : 'bg-dark-container'}>
+      <div className={`meme-image-container ${context.theme === 'light' ? 'bg-light-container' : 'bg-dark-container'}`}>
         <div className="meme-text text-top">{meme.topText}</div>
         <div className="meme-text text-bottom">{meme.bottomText}</div>
         <div>
