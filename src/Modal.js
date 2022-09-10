@@ -40,9 +40,9 @@ export default function Modal({show, onClose}) {
                 <img src={item?.images?.original.url} alt={item?.slug}/>
                 <div className='modal-info'>
                     <h1>{item?.title}</h1>
-                    <a href="#" className='modal-links'><span><i class="fa-solid fa-share-nodes"></i> Share</span></a>
-                    <a href="#" className='modal-links'><span><i class="fa-solid fa-code"></i> Embed</span></a>
-                    <a href={item?.url} className='modal-links'><span><i class="fa-solid fa-arrow-up-right-from-square"></i> On Giphy</span></a>
+                    <a href="#" className='modal-links'><span><i className="fa-solid fa-share-nodes"></i> Share</span></a>
+                    <a href="#" className='modal-links'><span><i className="fa-solid fa-code"></i> Embed</span></a>
+                    <a href={item?.url} className='modal-links'><span><i className="fa-solid fa-arrow-up-right-from-square"></i> On Giphy</span></a>
                 </div>
             </div>
         </div>
