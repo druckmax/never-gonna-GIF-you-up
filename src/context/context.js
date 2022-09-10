@@ -1,4 +1,5 @@
 import React, { useState, createContext } from "react";
+import NotificationManager from "react-notifications/lib/NotificationManager";
 // Main Context export
 export const MainContext = createContext();
 
@@ -102,6 +103,12 @@ export default function ContextProvider(props) {
     }
   };
 
+  // Create notifications
+
+  const createNotification = (name) => {
+    NotificationManager.success("has been added to Favorites", `${name}`);
+  };
+
   return (
     <MainContext.Provider
       value={{
@@ -133,6 +140,7 @@ export default function ContextProvider(props) {
         fetchSearch,
         fetchRandom,
         fetchTrending,
+        createNotification,
       }}
     >
       {props.children}
