@@ -1,6 +1,9 @@
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import { useContext, useState, useEffect } from "react";
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+// import {
+//   NotificationContainer,
+//   NotificationManager,
+// } from "react-notifications";
 import { MainContext } from "../../context/context";
 
 function GridItem({ item, url, className, img, alt, id, from }) {
@@ -10,13 +13,8 @@ function GridItem({ item, url, className, img, alt, id, from }) {
   const [imgIsLoaded, setImgIsLoaded] = useState(false);
   const [icon, setIcon] = useState(true);
 
-
-  const createNotification = (name) => {
-        NotificationManager.success( 'has been added to Favorites', `${name}`)
-  };
-
   const addToFavorites = (e) => {
-    createNotification(item.title)
+    context.createNotification(item.title);
     context.setDataFavorites((x) => {
       if ([...x].some((x) => x.id === id)) return x;
       setIcon(false);
@@ -32,10 +30,10 @@ function GridItem({ item, url, className, img, alt, id, from }) {
   };
 
   const modalToggle = () => {
-    context.setShowModal(true)
-    context.setIdTransfer(id)
-    context.setFrom(from)
-  }
+    context.setShowModal(true);
+    context.setIdTransfer(id);
+    context.setFrom(from);
+  };
 
   useEffect(() => {
     checkForItems();
@@ -44,8 +42,7 @@ function GridItem({ item, url, className, img, alt, id, from }) {
   return (
     <div className={className} key={id}>
       <div className="grid-item-container" onClick={modalToggle}>
-        <img onLoad={() => setImgIsLoaded(true)} src={img} alt={alt} id={id} />
-        <NotificationContainer/>
+        <img onLoad={() => setImgIsLoaded(true)} src={img} alt={alt} id={id} loading='lazy' />
       </div>
       {imgIsLoaded ? (
         icon ? (
@@ -54,15 +51,11 @@ function GridItem({ item, url, className, img, alt, id, from }) {
               className="heartIcon heartIconAnimation"
               onClick={addToFavorites}
             />
-            <NotificationContainer/>
           </div>
         ) : (
           <BsFillSuitHeartFill className="heartIcon heartGrey heartIconAnimation" />
         )
       ) : null}
-
-        
-
     </div>
   );
 }

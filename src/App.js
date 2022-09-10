@@ -16,6 +16,7 @@ import MemeGenerator from "./components/memeGenerator/MemeGenerator";
 import ErrorModal from "./components/ErrorModal/ErrorModal";
 import TopButton from "./components/TopButton/TopButton";
 import Modal from './Modal'
+import NotificationContainer from "react-notifications/lib/NotificationContainer";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
     // When deploying use HashRouter!
     <BrowserRouter>
       <div className="wrapper" id={context.theme}>
+        <NotificationContainer />
         {context.error ? <ErrorModal /> : null}
         {showButton && <TopButton />}
         <Searchbar />
