@@ -6,6 +6,7 @@
   min-height: 100vh;
   position: relative;
   transition: all .5s;
+  overflow-x: hidden;
 }
 
 #light {
@@ -170,6 +171,10 @@
   box-shadow: none;
   border-radius: 25px;
   font-size: 1.1rem;
+}
+
+.notification-container {
+  width: 30rem;
 }
 
 // Responsive Design PHONES

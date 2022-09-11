@@ -76,8 +76,8 @@
     position: relative;
     display: flex;
     justify-content: center;
-    width: 55rem;
-    max-width: 55rem;
+    width: 100%;
+    max-width: 60rem;
     padding: 5rem;
     margin-bottom: 4rem;
     border-radius: 15px;
@@ -86,17 +86,18 @@
     .meme-text {
       z-index: 3;
       position: absolute;
-      width: 80%;
       text-align: center;
-      left: 50%;
-      transform: translateX(-50%);
-      margin: 1rem 0;
-      padding: 0 0.3rem;
+      padding: 1rem;
+      max-width: 80%;
+      width: fit-content;
       font-family: impact, sans-serif;
-      font-size: 2em;
+      font-size: clamp(1rem, 5vw, 4rem);
+      // font-size: 3rem;
       text-transform: uppercase;
+      word-wrap: break-word;
       color: white;
       letter-spacing: 1px;
+      cursor: pointer;
       text-shadow:
         2px 2px 0 #000,
         -2px -2px 0 #000,
@@ -107,7 +108,22 @@
         0 -2px 0 #000,
         -2px 0 0 #000,
         2px 2px 5px #000;
+      overflow: hidden;
+      border: 1px solid transparent;
+
+      &:hover {
+        border: 2px dotted #222;
+        resize: both;
+      }
     }
+
+    @media (hover: none) {
+      .showGrabberHandler {
+        border: 2px dotted #222;
+        resize: both;
+      }
+    }
+
 
     .text-top {
       top: 6rem;
@@ -139,10 +155,11 @@
         padding: 0;
         border-radius: 0px;
       }
+
       .text-top {
         top: 1rem;
       }
-  
+
       .text-bottom {
         bottom: 1rem;
       }

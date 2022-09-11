@@ -45,6 +45,7 @@
     width: 100%;
     transform: translateX(100vw);
     transition: all .5s;
+    visibility: hidden;
 
     .toggle {
       width: 25rem;
@@ -57,6 +58,7 @@
   .transformToggle {
     opacity: 1;
     transform: translateX(0);
+    visibility: visible;
   }
 
   .arrow {
