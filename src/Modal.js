@@ -26,6 +26,9 @@ export default function Modal({show, onClose}) {
             case "searchResults":
                 setItem(...(context.dataSearch.filter(x => x.id === context.idTransfer)))
                 break
+            case "favorites":
+                setItem(...(context.dataFavorites.filter(x => x.id === context.idTransfer)))
+                break
             case "random":
                 setItem(context.dataRandom)
                 break

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { MainContext } from '../../context/context'
 import { ImCross } from "react-icons/im";
 
-function GridItemFav({ url, className, img, alt, id, item }) {
+function GridItemFav({ url, className, img, alt, id, item, from }) {
 
   const context = useContext(MainContext)
 
@@ -11,11 +11,17 @@ function GridItemFav({ url, className, img, alt, id, item }) {
     localStorage.setItem("Favorites", JSON.stringify(context.dataFavorites.filter(item => item.id !== id)));
   }
 
+  const modalToggle = () => {
+    context.setShowModal(true);
+    context.setIdTransfer(id);
+    context.setFrom(from);
+  };
+
   return (
     <div className={className} key={id}>
-      <a href={url} target='_blank' rel='noreferrer'>
+      <div className="grid-item-container" onClick={modalToggle}>
         <img src={img} alt={alt} id={id} />
-      </a>
+      </div>
       <ImCross className="heartIcon xIcon" onClick={() => removeItem()}/>
     </div>
   );

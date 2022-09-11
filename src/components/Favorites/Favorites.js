@@ -35,6 +35,7 @@ export default function Favorites() {
             alt={x?.slug}
             id={x?.id}
             key={x?.id}
+            from={"favorites"}
           />
         );
       })}
