@@ -14,11 +14,8 @@ Additionally a toggle lets you switch between light and dark mode.
 
 Special attention was paid to a fully responsive design.
 
-Watch the live version:
-
-<a href="#" target='_blank'>Placeholder</a>
+<strong><a href="https://never-gonna-gif-you-up.netlify.app/" target='_blank'>Watch the live version on Netlify 🎉</a></strong>
 
 <br>
 
 ![image of the app](./img/app_img.png)
-
