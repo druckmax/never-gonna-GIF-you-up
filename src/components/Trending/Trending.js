@@ -11,6 +11,7 @@ export default function Trending() {
   useEffect(() => {
     context.fetchTrending();
     setTimeout(() => context.setLoading(false), 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, []);
 
   if (context.loading)

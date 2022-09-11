@@ -32,7 +32,8 @@ function App() {
     return () => {
       window.removeEventListener("scroll", buttonVisibility);
     };
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
+  }, []);
 
   return (
     // When deploying use HashRouter!

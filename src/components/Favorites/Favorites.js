@@ -12,6 +12,7 @@ export default function Favorites() {
   useEffect(() => {
       if(localStorage.getItem("Favorites")){
       context.setDataFavorites(JSON.parse(localStorage.getItem("Favorites")));
+      // eslint-disable-next-line react-hooks/exhaustive-deps 
   }}, []);
 
   if (context.dataFavorites.length === 0)

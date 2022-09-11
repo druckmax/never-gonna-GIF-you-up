@@ -29,6 +29,7 @@ export default function Modal({show, onClose}) {
             default:
                 break
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps 
     }, [context.idTransfer])
 
     if (!show) return null

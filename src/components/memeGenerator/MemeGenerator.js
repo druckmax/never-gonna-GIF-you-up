@@ -30,6 +30,7 @@ export default function MemeGenerator() {
 
   useEffect(() => {
     fetchMemeTemps();
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, []);
 
   // Get random number based on memeArr length

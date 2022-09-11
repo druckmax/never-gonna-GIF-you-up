@@ -9,6 +9,7 @@ export default function Random() {
 
   useEffect(() => {
     context.fetchRandom();
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, []);
 
   // loading spinner

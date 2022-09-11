@@ -37,12 +37,13 @@ function GridItem({ item, url, className, img, alt, id, from }) {
 
   useEffect(() => {
     checkForItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, []);
 
   return (
     <div className={className} key={id}>
       <div className="grid-item-container" onClick={modalToggle}>
-        <img onLoad={() => setImgIsLoaded(true)} src={img} alt={alt} id={id} loading='lazy' />
+        <img onLoad={() => setImgIsLoaded(true)} src={img} alt={alt} id={id} />
       </div>
       {imgIsLoaded ? (
         icon ? (
