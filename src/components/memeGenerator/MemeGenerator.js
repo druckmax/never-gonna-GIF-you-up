@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { useEffect } from "react";
 import fry_placeholder from "./img/take-my-money.gif";
 import Draggable from "react-draggable";
-import {BsTextareaResize} from 'react-icons/bs'
 
 import "./MemeGenerator.scss";
 
