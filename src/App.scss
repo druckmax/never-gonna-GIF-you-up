@@ -6,6 +6,7 @@
   min-height: 100vh;
   position: relative;
   transition: all .5s;
+  overflow-x: hidden;
 }
 
 #light {
@@ -45,6 +46,7 @@
     transform: translate(3px, -3px) scale(.8);
   }
 }
+
 .xIcon {
   color: rgba(255, 255, 255, .9);
 
@@ -66,9 +68,11 @@
       opacity: 0;
       font-size: 0;
     }
+
     50% {
       font-size: 3.5rem;
     }
+
     100% {
       opacity: 1;
       font-size: 2.5rem;
@@ -109,16 +113,22 @@
 }
 
 .loadingWrapper {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.8);
-  }
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.8);
+}
 
 .grid-item {
   margin: 0 0 1rem 0;
   position: relative;
   cursor: pointer;
+
+  a {
+    img {
+      width: 100%;
+    }
+  }
 
   .grid-item-container {
     img {
@@ -163,17 +173,11 @@
   font-size: 1.1rem;
 }
 
-// Responsive Design PHONES
-@media only screen and (max-width: 300px) {
-  .grid-item {
-    a {
-      img {
-        width: 100%;
-      }
-    }
-  }
-
+.notification-container {
+  width: 30rem;
 }
+
+// Responsive Design PHONES
 
 @media only screen and (min-width: 400px) {
   .grid-container {
