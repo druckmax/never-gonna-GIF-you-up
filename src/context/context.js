@@ -108,6 +108,10 @@ export default function ContextProvider(props) {
     NotificationManager.success("has been added to Favorites", `${name}`);
   };
 
+  const createNotificationClipboard = () => {
+    NotificationManager.info("", "Copied to clipboard");
+  };
+
   return (
     <MainContext.Provider
       value={{
@@ -140,6 +144,7 @@ export default function ContextProvider(props) {
         fetchRandom,
         fetchTrending,
         createNotification,
+        createNotificationClipboard,
       }}
     >
       {props.children}
